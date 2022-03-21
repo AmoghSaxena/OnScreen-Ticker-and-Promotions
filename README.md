@@ -30,7 +30,7 @@ For Other distribution other than Ubuntu can install dependencies with similar c
 ### Procedure to Install this code ###
 #### 1. Clone the Repo ####
 ```shell
-$ git clone https://dvgit.digivalet.com/scm/dvcsof/tickerv2.git ticker
+$ git clone https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions.git ticker
 ```
 
 #### 2. Change the working directory to cloned directory
