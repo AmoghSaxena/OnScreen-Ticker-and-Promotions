@@ -39,12 +39,13 @@ $ cd ticker
 ```
 
 #### 3. Run `Installation.sh` file ####
-<h4 align="center">If `installation.sh` is already executable then you can directly run it with </h4>
+If `installation.sh` is already executable then you can directly run it with
 ```shell
  $ ./installation.sh
 ```
-<h4 align="center">OR</h4>
-<h4 align="center">If `installation.sh` is not executable then you can make it executable and run it with </h4>
+OR
+
+If `installation.sh` is not executable then you can make it executable and run it with
 ```shell
 $ chmod +x ./installation.sh
 $ ./installation.sh
@@ -112,12 +113,13 @@ $ ./installation.sh
 ```
 
 #### 5. Run the program with ```start_ticker``` file ####
-<h4 align="center">If `start_ticker` is already executable then you can directly run it with </h4>
+If `start_ticker` is already executable then you can directly run it with
 ```shell
  $ ./start_ticker
 ```
-<h4 align="center">OR</h4>
-<h4 align="center">If `start_ticker` is already executable then you can directly run it with </h4>
+OR
+
+If `start_ticker` is already executable then you can directly run it with
 ```shell
 $ chmod +x .start_ticker
 $ ./start_ticker
