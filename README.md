@@ -131,12 +131,13 @@ $ ./start_ticker
 
 > If In Emergency you need to stop the ticker then you can run `stop_ticker`
 > 
-> <h4 align="center">If `stop_ticker` is already executable then you can directly run it with </h4>
+> If `stop_ticker` is already executable then you can directly run it with
 > ```shell
 > $ ./stop_ticker
 > ```
-> <h4 align="center">OR</h4>
-> <h4 align="center">If `stop_ticker` is already executable then you can directly run it with </h4>
+> OR
+> 
+> If `stop_ticker` is already executable then you can directly run it with
 > ```shell
 > $ chmod +x .stop_ticker
 > $ ./stop_ticker
