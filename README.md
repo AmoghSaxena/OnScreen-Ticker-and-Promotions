@@ -6,6 +6,7 @@ A Linux Program for On-Screen Advertisements and promotions like shown in News C
 ### OS related Dependency ###
 1. Linux OS (recommended Ubuntu)
 2. Desktop Environment Like `Ubuntu(Gnome/Mate/Lite/etc) - with hidden decorators`, `OpenBOX - with hidden decorators`
+3. Supported Python Version 3.6+
 
 ### Tools for Proper working of Ticker ###
 * virtualenv 
