@@ -1,81 +1,10 @@
 import sys
-import sys
 import os
 import time
 import json
 import pygame
 from os import devnull
 from moviepy.editor import *
-
-def speed():
-    with open("ticker_setup.json", "r") as f:
-        conf = json.load(f)
-
-    if conf['main_ticker_speed'] == "fast":
-        speed.block_skip = 4
-        speed.time_sleep = 0.003
-    elif conf['main_ticker_speed'] == "normal":
-        speed.block_skip = 2
-        speed.time_sleep = 0.006
-    elif conf['main_ticker_speed'] == "slow":
-        speed.block_skip = 2
-        speed.time_sleep = 0.009
-    elif conf['main_ticker_speed'] == "very-slow":
-        speed.block_skip = 2
-        speed.time_sleep = 0.012
-
-def optional_speed():
-    with open("ticker_setup.json", "r") as f:
-        conf = json.load(f)
-
-    if conf['optional_ticker_speed'] == "fast":
-        optional_speed.block_skip = 4
-        optional_speed.time_sleep = 0.003
-    elif conf['optional_ticker_speed'] == "normal":
-        optional_speed.block_skip = 2
-        optional_speed.time_sleep = 0.006
-    elif conf['optional_ticker_speed'] == "slow":
-        optional_speed.block_skip = 2
-        optional_speed.time_sleep = 0.009
-    elif conf['optional_ticker_speed'] == "very-slow":
-        optional_speed.block_skip = 2
-        optional_speed.time_sleep = 0.012
-
-def font_n_length():
-    with open("ticker_setup.json", "r") as f:
-        conf = json.load(f)
-
-    message = conf['main_ticker_message']
-    ############## LIST OF ENGLISH FONTS ################
-    if conf['main_ticker_font'] == "MyriadProFont":
-        font_n_length.ticker_font_size = 100
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.8) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / 28)
-
-    elif conf['main_ticker_font'] == "Ubuntu":
-        font_n_length.ticker_font_size = 100
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / 128)
-
-    elif conf['main_ticker_font'] == "TimesNewRoman":
-        font_n_length.ticker_font_size = 100
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.3) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / 90)
-    #####################################################
-
-    ############# LIST OF RUSSIAN FONTS #################
-    # if conf['main_ticker_font'] == "MyriadProFont":
-    #     font_n_length.ticker_font_size = 100
-    #     font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.8) * (-1)
-    #     font_n_length.main_ticker_hight = int(conf['resolution_height'] / 28)
-    #####################################################
-
-    ############ LIST OF ARABIC FONTS ###################
-    # if conf['main_ticker_font'] == "MyriadProFont":
-    #     font_n_length.ticker_font_size = 100
-    #     font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.8) * (-1)
-    #     font_n_length.main_ticker_hight = int(conf['resolution_height'] / 28)
-    #####################################################
 
 
 def optinal_font_n_length():
@@ -100,19 +29,33 @@ def optinal_font_n_length():
         optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 385)
     #####################################################
 
-    ############# LIST OF RUSSIAN FONTS #################
-    # if conf['main_ticker_font'] == "MyriadProFont":
-    #     font_n_length.ticker_font_size = 100
-    #     font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.8) * (-1)
-    #     font_n_length.main_ticker_hight = int(conf['resolution_height'] / 28)
-    #####################################################
+    ############ LIST OF RUSSIAN FONTS #################
+    if conf['optional_ticker_font'] == "NotoSansArabic":
+        optinal_font_n_length.ticker_font_size = 20
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.5) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 1000)
+    ####################################################
 
-    ############ LIST OF ARABIC FONTS ###################
-    # if conf['main_ticker_font'] == "MyriadProFont":
-    #     font_n_length.ticker_font_size = 100
-    #     font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.8) * (-1)
-    #     font_n_length.main_ticker_hight = int(conf['resolution_height'] / 28)
-    #####################################################
+    ########### LIST OF FREE FONTS ###################
+    if conf['optional_ticker_font'] == "FreeSans":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.9) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 500)
+    ####################################################
+
+    ########### LIST OF CHINESE FONTS ###################
+    if conf['optional_ticker_font'] == "ZCOOLQingKeHuangYou":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.2) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 500)
+    ####################################################
+
+    ########### LIST OF JAPANESE FONTS ###################
+    if conf['optional_ticker_font'] == "NotoSansJP":
+        optinal_font_n_length.ticker_font_size = 30
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.2) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 800)
+    ####################################################
 
 
 # Function -> Main Ticker on bottom screen.
@@ -122,7 +65,7 @@ def ticker_main():
 
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((-1), (conf['resolution_height']) - (int(conf['resolution_height']) / 8))
 
-    main_ticker_font_size = font_n_length.ticker_font_size
+    main_ticker_font_size = conf['main_ticker_font_size']
     pygame.init()
     pygame.display.set_caption('MainTicker')
     windowSize = [conf['resolution_width'], conf['resolution_height'] / 8]
@@ -136,7 +79,7 @@ def ticker_main():
             y = conf['resolution_width'] / 96  # image
 
     a = conf['resolution_width']  # for text
-    b = font_n_length.main_ticker_hight  # for text
+    b = conf['main_ticker_font_height']  # for text
 
     # message = conf['ticker_message']
     message = conf['main_ticker_message']
@@ -151,7 +94,7 @@ def ticker_main():
             screen.fill(white)
             a = a - block_skip
             time.sleep(time_sleep)
-            if a <= font_n_length.left_length:
+            if a <= conf['main_ticker_font_length']:
                 a = (conf['resolution_width'] + int(conf['resolution_width']*0.010))
 
             screen.blit(texting, (a, b))
@@ -168,7 +111,7 @@ def ticker_main():
             a = a + block_skip
             time.sleep(time_sleep)
             if a >= (conf['resolution_width'] + int(conf['resolution_width']*0.010)):
-                a = font_n_length.left_length
+                a = conf['main_ticker_font_length']
 
             screen.blit(texting, (a, b))
             if conf['main_ticker_logo'] == True:
@@ -179,9 +122,9 @@ def ticker_main():
                     finished = True
 
     if conf['main_ticker_motion'] == "right-left":
-        right_to_left(a, b, speed.block_skip, speed.time_sleep)
+        right_to_left(a, b, conf['main_block_skip'], conf['main_time_sleep'])
     elif conf['main_ticker_motion'] == "left-right":
-        left_to_right(a, b, speed.block_skip, speed.time_sleep)
+        left_to_right(a, b, conf['block_skip'], conf['time_sleep'])
 
     pygame.quit()
 
@@ -189,7 +132,6 @@ def ticker_main():
 # Function -> Secondary Ticker moving above the primary(main) ticker
 def ticker_optional():
     optinal_font_n_length()
-    optional_speed()
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
@@ -242,9 +184,9 @@ def ticker_optional():
                     finished = True
 
     if conf['optinal_ticker_motion'] == "right-left":
-        optional_right_to_left(a, b, optional_speed.block_skip, optional_speed.time_sleep)
+        optional_right_to_left(a, b, conf['optional_block_skip'], conf['optional_time_sleep'])
     elif conf['optinal_ticker_motion'] == "left-right":
-        optional_left_to_right(a, b, optional_speed.block_skip, optional_speed.time_sleep)
+        optional_left_to_right(a, b, conf['optional_block_skip'], conf['optional_time_sleep'])
 
     pygame.quit()
 
@@ -254,11 +196,7 @@ def ticker_optional():
 args = sys.argv
 if args[1] == '1':
     # To run Optional Ticker
-    speed()
-    font_n_length()
     ticker_optional()
 elif args[1] == '2':
     # To run Main Ticker below
-    speed()
-    font_n_length()
     ticker_main()
