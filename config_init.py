@@ -104,7 +104,7 @@ if __name__ == '__main__':
 
     if CONFIG_DATA['main_ticker_condition'] == True:
         bgcolor()
-
+        
 
         if CONFIG_DATA['main_ticker_logo'] == True:
             resize()
