@@ -51,7 +51,7 @@ if [[ $? == 0 ]]; then
       fi
 
       sleep $TIME_SLEEP
-      bash $(dirname "$TMPE")/stopticker
+      bash $(dirname "$TMPE")/stop_ticker
 	else
 	  echo "IMPROPER VERISON OF PYTHON FOUND IN VIRTUAL ENV"
   fi

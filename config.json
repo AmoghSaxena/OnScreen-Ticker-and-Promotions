@@ -16,6 +16,7 @@
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
    "main_ticker_font": "MyriadProFont",
+   "main_ticker_font_size": "x-large",
    "main_ticker_bgcolor": [
       255,
       0,
