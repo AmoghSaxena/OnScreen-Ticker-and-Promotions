@@ -104,10 +104,11 @@ if __name__ == '__main__':
 
     if CONFIG_DATA['main_ticker_condition'] == True:
         bgcolor()
-        png_jpg()
+        
 
         if CONFIG_DATA['main_ticker_logo'] == True:
             resize()
+            png_jpg()
 
         if CONFIG_DATA['optional_ticker_condition'] == True:
             print("Hi")
