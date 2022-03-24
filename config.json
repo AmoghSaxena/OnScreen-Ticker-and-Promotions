@@ -1,5 +1,5 @@
 {
-   "static_ticker_condition": true,
+   "static_ticker_condition": false,
    "position_static_ticker": "top-left",
    "static_ticker_bgcolor": [
       0,
@@ -30,7 +30,7 @@
    "main_ticker_speed": "normal",
    "main_ticker_motion": "right-left",
    "optional_ticker_condition": true,
-   "optional_ticker_message": "ليست كل الأشياء الجيدة تستغرق وقتا. تقديم وجبات غداء سريعة في The Polo Club. استمتع بقائمة طعام هندية أو غربية مكونة من طبقين مع نصف لتر من البيرة أو مشروب غازي من اختيارك. ليس في كثير من الأحيان أن وجبة فاخرة يمكن أن تشعر بالخفة.",
+   "optional_ticker_message": "ليست كل الأشياء الجيدة تستغرق وقتا. تقديم وجبات غداء سريعة في استمتع بقائمة طعام هندية أو غربية مكونة من طبقين مع نصف لتر من البيرة أو مشروب غازي من اختيارك. ليس في كثير من الأحيان أن وجبة فاخرة يمكن أن تشعر بالخفة.",
    "optional_ticker_font": "NotoSansArabic",
    "optional_ticker_bgcolor": [
       193,
