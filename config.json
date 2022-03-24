@@ -12,40 +12,40 @@
    "static_ticker_font_size": 40,
    "static_ticker_font": "Ubuntu",
    "main_ticker_condition": true,
-   "main_ticker_message": "Multiple commands can be specified a the same time and there\u2019s also a delay that sleeps a certain amount of milliseconds before next command is executed. Here\u2019s an example where select is pressed, followed by left after waiting a second:",
+   "main_ticker_message": "Seasons  come  and  go,  but  good  taste  lives  on. | After  a  brief  return  to  her  roots  in  Thailand,  Rim  Naam’s  Masterchef  Tam  is  back  with  plenty  of  inspiration  to  take  the much-loved cuisine of Bengaluru’s favourite Thai restaurant to even greater heights. Reserve a table today to experience what the best tastes like when it gets even better. | For reservations, call extension 60",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
    "main_ticker_font": "MyriadProFont",
    "main_ticker_font_size": "x-large",
    "main_ticker_bgcolor": [
-      255,
-      0,
-      0
+      17,
+      50,
+      77
    ],
    "main_ticker_font_color": [
-      255,
-      255,
-      255
+      193,
+      207,
+      192
    ],
-   "main_ticker_speed": "fast",
+   "main_ticker_speed": "normal",
    "main_ticker_motion": "right-left",
    "optional_ticker_condition": true,
-   "optional_ticker_message": "Multiple commands can be specified a the same time and there\u2019s also a delay that sleeps a certain amount of milliseconds before next command is executed. Here\u2019s an example where select is pressed, followed by left after waiting a second:",
+   "optional_ticker_message": "Not all good things take time. Introducing express lunches at The Polo Club. Enjoy a two-course Indian or Western menu with a pint of beer or a soft beverage of your choice. It’s not often that a meal so sumptuous can feel so light.",
    "optional_ticker_font": "MyriadProFont",
    "optional_ticker_bgcolor": [
-      255,
-      162,
-      5
+      193,
+      207,
+      192
    ],
    "optional_ticker_font_color": [
-      0,
-      0,
-      0
+      17,
+      50,
+      77
    ],
-   "optional_ticker_speed": "fast",
+   "optional_ticker_speed": "normal",
    "optinal_ticker_motion": "left-right",
    "moving_ticker_condition": true,
-   "moving_ticker_localtion": "center",
+   "moving_ticker_localtion": "right",
    "moving_ticker_center_size": "small",
    "time_interval": 197
 }
