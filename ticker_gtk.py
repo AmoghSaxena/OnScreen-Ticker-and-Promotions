@@ -72,6 +72,7 @@ def splashwindowimage():
     window.show_all()
 
     Gtk.main()
+
 if pos != "center":
     os.system(f"xdotool mousemove {setup['gtk_ticker_pos_x']} {setup['gtk_ticker_pos_y']}")
 if setup['static_ticker_logo'] == True:
