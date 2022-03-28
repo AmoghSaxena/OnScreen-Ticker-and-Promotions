@@ -1,5 +1,5 @@
 {
-   "static_ticker_condition": true,
+   "static_ticker_condition": false,
    "position_static_ticker": "top-left",
    "static_ticker_bgcolor": [
       0,
@@ -11,7 +11,7 @@
    "static_ticker_font_color": "#ffffff",
    "static_ticker_font_size": 40,
    "static_ticker_font": "Ubuntu",
-   "main_ticker_condition": false,
+   "main_ticker_condition": true,
    "main_ticker_message": "Allow us to to take a load off your mind, body and our prices too. Book any spa therapy between 10 p.m. and 2 a.m. and enjoy 30% reduction on the price. It’s the perfect excuse to de-stress and rejuvenate yourself.  | For reservations, call extension 60",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
@@ -44,8 +44,8 @@
    ],
    "optional_ticker_speed": "normal",
    "optinal_ticker_motion": "left-right",
-   "moving_ticker_condition": false,
-   "moving_ticker_localtion": "center",
+   "moving_ticker_condition": true,
+   "moving_ticker_localtion": "right",
    "moving_ticker_center_size": "small",
    "time_interval": 197
 }
