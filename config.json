@@ -27,8 +27,8 @@
       255,
       255
    ],
-   "main_ticker_speed": "normal",
-   "main_ticker_motion": "right-left",
+   "main_ticker_speed": "fast",
+   "main_ticker_motion": "left-right",
    "optional_ticker_condition": true,
    "optional_ticker_message": "We wish your birthday will be defined by love, joy and happiness. We hope that you will be graced with the strength to accomplish all that you aspire in your days ahead. Happy birthday! by Team Armani",
    "optional_ticker_font": "MyriadProFont",
