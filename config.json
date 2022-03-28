@@ -1,5 +1,5 @@
 {
-   "static_ticker_condition": false,
+   "static_ticker_condition": true,
    "position_static_ticker": "top-left",
    "static_ticker_bgcolor": [
       0,
@@ -44,7 +44,7 @@
    ],
    "optional_ticker_speed": "normal",
    "optinal_ticker_motion": "left-right",
-   "moving_ticker_condition": true,
+   "moving_ticker_condition": false,
    "moving_ticker_localtion": "center",
    "moving_ticker_center_size": "small",
    "time_interval": 197
