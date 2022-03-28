@@ -12,37 +12,37 @@
    "static_ticker_font_size": 40,
    "static_ticker_font": "Ubuntu",
    "main_ticker_condition": true,
-   "main_ticker_message": "Allow us to to take a load off your mind, body and our prices too. Book any spa therapy between 10 p.m. and 2 a.m. and enjoy 30% reduction on the price. It’s the perfect excuse to de-stress and rejuvenate yourself.  | For reservations, call extension 60",
+   "main_ticker_message": "Happy Birthday Mr. Yash Sharma! | Here's a gift for you. | Save even more on newly marked down gear with code BIRTHDAY50 and grab upto 50% OFF on armani products. | Also Free SPA access for you on the occasion of your birthday.",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
    "main_ticker_font": "MyriadProFont",
    "main_ticker_font_size": "x-large",
    "main_ticker_bgcolor": [
-      17,
-      50,
-      77
+      172,
+      144,
+      169
    ],
    "main_ticker_font_color": [
-      193,
-      207,
-      192
+      255,
+      255,
+      255
    ],
    "main_ticker_speed": "normal",
-   "main_ticker_motion": "right-left",
+   "main_ticker_motion": "left-right",
    "optional_ticker_condition": true,
-   "optional_ticker_message": "ليست كل الأشياء الجيدة تستغرق وقتا. تقديم وجبات غداء سريعة في استمتع بقائمة طعام هندية أو غربية مكونة من طبقين مع نصف لتر من البيرة أو مشروب غازي من اختيارك. ليس في كثير من الأحيان أن وجبة فاخرة يمكن أن تشعر بالخفة.",
-   "optional_ticker_font": "NotoSansArabic",
+   "optional_ticker_message": "We wish your birthday will be defined by love, joy and happiness. We hope that you will be graced with the strength to accomplish all that you aspire in your days ahead. Happy birthday! by Team Armani",
+   "optional_ticker_font": "MyriadProFont",
    "optional_ticker_bgcolor": [
-      193,
-      207,
-      192
+      238,
+      164,
+      167
    ],
    "optional_ticker_font_color": [
-      17,
-      50,
-      77
+      255,
+      255,
+      255
    ],
-   "optional_ticker_speed": "normal",
+   "optional_ticker_speed": "fast",
    "optinal_ticker_motion": "left-right",
    "moving_ticker_condition": true,
    "moving_ticker_localtion": "right",
