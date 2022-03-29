@@ -124,7 +124,7 @@ def ticker_main():
     if conf['main_ticker_motion'] == "right-left":
         right_to_left(a, b, conf['main_block_skip'], conf['main_time_sleep'])
     elif conf['main_ticker_motion'] == "left-right":
-        left_to_right(a, b, conf['block_skip'], conf['time_sleep'])
+        left_to_right(a, b, conf['main_block_skip'], conf['time_sleep'])
 
     pygame.quit()
 
