@@ -42,7 +42,7 @@
       255,
       255
    ],
-   "optional_ticker_speed": "fast",
+   "optional_ticker_speed": "normal",
    "optinal_ticker_motion": "right-left",
    "moving_ticker_condition": true,
    "moving_ticker_localtion": "right",
