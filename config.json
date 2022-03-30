@@ -17,7 +17,7 @@
       255
    ],
    "main_ticker_speed": "normal",
-   "main_ticker_motion": "left-right",
+   "main_ticker_motion": "right-left",
    "optional_ticker_condition": false,
    "moving_ticker_condition": false,
    "time_interval": 100
