@@ -20,5 +20,5 @@
    "main_ticker_motion": "left-right",
    "optional_ticker_condition": false,
    "moving_ticker_condition": false,
-   "time_interval": 20
+   "time_interval": 100
 }
