@@ -1,5 +1,5 @@
 {
-   "static_ticker_condition": true,
+   "static_ticker_condition": false,
    "position_static_ticker": "top-left",
    "static_ticker_bgcolor": [
       0,
