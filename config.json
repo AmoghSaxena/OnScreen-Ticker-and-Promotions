@@ -1,26 +1,15 @@
 {
    "static_ticker_condition": false,
-   "position_static_ticker": "top-left",
-   "static_ticker_bgcolor": [
-      0,
-      0,
-      0
-   ],
-   "static_ticker_logo": true,
-   "static_ticker_message": "Yeah!",
-   "static_ticker_font_color": "#ffffff",
-   "static_ticker_font_size": 40,
-   "static_ticker_font": "Ubuntu",
    "main_ticker_condition": true,
    "main_ticker_message": "Happy Birthday Mr. Yash Sharma! | Here's a gift for you. | Save even more on newly marked down gear with code BIRTHDAY50 and grab upto 50% OFF on armani products. | Also Free SPA access for you on the occasion of your birthday.",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
    "main_ticker_font": "MyriadProFont",
-   "main_ticker_font_size": "x-large",
+   "main_ticker_font_size": "mid",
    "main_ticker_bgcolor": [
-      172,
-      144,
-      169
+      247,
+      0,
+      0
    ],
    "main_ticker_font_color": [
       255,
@@ -44,8 +33,7 @@
    ],
    "optional_ticker_speed": "normal",
    "optinal_ticker_motion": "right-left",
-   "moving_ticker_condition": true,
-   "moving_ticker_localtion": "right",
-   "moving_ticker_center_size": "small",
-   "time_interval": 197
+   "optional_ticker_condition": false,
+   "moving_ticker_condition": false,
+   "time_interval": 100
 }
