@@ -18,8 +18,6 @@ if [[ $? == 0 ]]; then
      echo "+ SETTING UP CONFIGURATIONS FOR THE PROGRAM..."
      eval "python config_init.py"
      echo "+ CHECKING STATIC TICKER STATUS"
-      # FOR CHECING THE SLEEP TIME
-      TIME_SLEEP=$(cat ticker_setup.json | grep time_interval | awk '{print $2}'|cut -d , -f1)
 
       # FOR STATIC TICKER
       TICKER_STATIC=$(cat $(dirname "$TMPE")/config.json | grep static_ticker_condition | awk '{print $2}'|cut -d , -f1)
@@ -46,11 +44,10 @@ if [[ $? == 0 ]]; then
       # FOR MOVING TICKER
       TICKER_MOVING=$(cat ticker_setup.json | grep moving_ticker_condition | awk '{print $2}'|cut -d , -f1)
       if [[ $TICKER_MOVING = "true" ]]; then
-        eval "sleep 1s"
+        eval "sleep 0.2s"
         eval "python ticker_animated.py &"
       fi
 
-      sleep $TIME_SLEEP
       bash $(dirname "$TMPE")/stop_ticker
 	else
 	  echo "IMPROPER VERISON OF PYTHON FOUND IN VIRTUAL ENV"

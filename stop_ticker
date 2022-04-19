@@ -1,17 +1,12 @@
 #!/bin/bash
 
-for KILLPID in `ps ax | grep 'ticker_animated.py' | awk '{print $1;}'`; do
-kill -9 $KILLPID &> /dev/null;
-done
+TMPE=$( realpath "$0"  )
+cd $(dirname "$TMPE")
 
-for KILLPID in `ps ax | grep 'ticker_main.py' | awk '{print $1;}'`; do
-kill -9 $KILLPID &> /dev/null;
-done
+TIME_SLEEP=$(cat ticker_setup.json | grep time_interval | awk '{print $2}'|cut -d , -f1)
+sleep $TIME_SLEEP
 
-for KILLPID in `ps ax | grep 'ticker_gtk.py' | awk '{print $1;}'`; do
-kill -9 $KILLPID &> /dev/null;
-done
-
-for KILLPID in `ps ax | grep 'start_ticker' | awk '{print $1;}'`; do
-kill -9 $KILLPID &> /dev/null;
+for a in "$@";
+do
+kill -9 $a &> /dev/null;
 done
