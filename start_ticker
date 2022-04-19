@@ -24,6 +24,7 @@ if [[ $? == 0 ]]; then
 
       if [[ $TICKER_STATIC = "true" ]]; then
         eval "python ticker_gtk.py &"
+        TICKER_STATIC_PID=$!
       fi
       echo "+ CHECKING MAIN TICKER STATUS"
 
@@ -36,9 +37,11 @@ if [[ $? == 0 ]]; then
         TICKER_MAIN_OPTIONAL=$(cat $(dirname "$TMPE")/config.json | grep optional_ticker_condition | awk '{print $2}'|cut -d , -f1)
         if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
           eval "python ticker_main.py 1 &"
+          TICKER_MAIN_OPTIONAL_PID=$!
           eval "sleep 0.2s"
         fi
         eval "python ticker_main.py 2 &"
+        TICKER_MAIN_PID=$!
       fi
 
       # FOR MOVING TICKER
@@ -46,9 +49,10 @@ if [[ $? == 0 ]]; then
       if [[ $TICKER_MOVING = "true" ]]; then
         eval "sleep 0.2s"
         eval "python ticker_animated.py &"
+        TICKER_MOVING_PID=$!
       fi
 
-      bash $(dirname "$TMPE")/stop_ticker
+      bash $(dirname "$TMPE")/stop_ticker $TICKER_STATIC_PID $TICKER_MAIN_OPTIONAL_PID $TICKER_MAIN_PID $TICKER_MOVING_PID
 	else
 	  echo "IMPROPER VERISON OF PYTHON FOUND IN VIRTUAL ENV"
   fi
