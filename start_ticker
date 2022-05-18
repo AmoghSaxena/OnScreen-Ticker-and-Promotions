@@ -52,7 +52,7 @@ if [[ $? == 0 ]]; then
         TICKER_MOVING_PID=$!
       fi
 
-      bash $(dirname "$TMPE")/stop_ticker $TICKER_STATIC_PID $TICKER_MAIN_OPTIONAL_PID $TICKER_MAIN_PID $TICKER_MOVING_PID &
+      bash $(dirname "$TMPE")/stop_ticker $TICKER_STATIC_PID $TICKER_MAIN_OPTIONAL_PID $TICKER_MAIN_PID $TICKER_MOVING_PID
 	else
 	  echo "IMPROPER VERISON OF PYTHON FOUND IN VIRTUAL ENV"
   fi
