@@ -196,7 +196,7 @@ def font_n_length(font_name):
 def resize_gtk():
     # convert the logo to the resolution dependent
     print("Resizing the logo -> ", end=' ')
-    resize.square = int(float(resolution.width) / 17.45)
+    resize.square = int(float(resolution.width) / CONFIG_DATA['static_ticker_image_size'])
     image = Image.open(f"""{BASE_DIR}/media/logo_gtk.png""")
     image = image.resize((resize.square, resize.square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo_gtk.png""")

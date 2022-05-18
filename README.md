@@ -6,7 +6,8 @@ A Linux Program for On-Screen Advertisements and promotions like shown in News C
 ### OS related Dependency ###
 1. Linux OS (recommended Ubuntu)
 2. Desktop Environment Like `Ubuntu(Gnome/Mate/Lite/etc) - with hidden decorators`, `OpenBOX - with hidden decorators`
-3. [![Supported Python Version 3.6+](https://img.shields.io/badge/Python-v3.6+-blue.svg?style=flat-square&logo=python)](https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions)
+> If you want to disable the decorator in Gnome then check my Stack Overflow solution over here : [StackOverflow Link](https://stackoverflow.com/a/71908794/8813647)
+3. Supported Python Version 3.6 [![Supported Python Version 3.6+](https://img.shields.io/badge/Python-v3.6+-blue.svg?style=flat-square&logo=python)](https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions)
 
 ### Tools for Proper working of Ticker ###
 * virtualenv 
@@ -133,12 +134,12 @@ $ ./start_ticker
 > 
 > If `stop_ticker` is already executable then you can directly run it with
 > ```shell
-> $ ./stop_ticker
+> $ ./stop_ticker_force
 > ```
 > OR
 > 
 > If `stop_ticker` is already executable then you can directly run it with
 > ```shell
-> $ chmod +x .stop_ticker
-> $ ./stop_ticker
+> $ chmod +x ./stop_ticker_force
+> $ ./stop_ticker_force
 > ```
