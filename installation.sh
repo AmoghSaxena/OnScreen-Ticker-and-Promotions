@@ -32,7 +32,6 @@ if [[ $? == 0 ]]; then
 	  pip install pip --upgrade
 	  pip install pygame==2.1.0
 	  pip install moviepy==1.0.3
-	  pip install colorama==0.4.4
 	  pip install PyGObject==3.42.0
 	else
 	  echo "IMPROPER VERISON OF PYTHON FOUND IN VIRTUAL ENV"

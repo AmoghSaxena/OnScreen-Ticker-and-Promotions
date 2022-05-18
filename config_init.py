@@ -4,7 +4,6 @@ import time
 import sys
 from PIL import Image
 from pathlib import Path
-from colorama import Fore
 from PIL import ImageGrab
 
 args = sys.argv
@@ -23,7 +22,7 @@ def resolution():
     resolution.width, resolution.height = ImageGrab.grab().size
     CONFIG_DATA["resolution_width"] = resolution.width
     CONFIG_DATA["resolution_height"] = resolution.height
-    print(Fore.YELLOW + f"""{resolution.width} x {resolution.height}""" + Fore.RESET)
+    print(f"""{resolution.width} x {resolution.height}""")
 
 
 def resize():
@@ -34,7 +33,7 @@ def resize():
     image = image.resize((resize.square, resize.square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo.png""")
     CONFIG_DATA["image_size"] = resize.square
-    print(Fore.YELLOW + "Done" + Fore.RESET)
+    print("Done")
 
 
 def gtk_worker():
@@ -201,12 +200,12 @@ def resize_gtk():
     image = image.resize((resize.square, resize.square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo_gtk.png""")
     CONFIG_DATA["image_size"] = resize.square
-    print(Fore.YELLOW + "Done" + Fore.RESET)
+    print("Done")
 
 def bgcolor():
     print("Backfround color set to : ", end=' ')
 
-    print(Fore.LIGHTGREEN_EX + "Done" + Fore.RESET)
+    print("Done")
 
 
 def png_jpg():
@@ -220,14 +219,14 @@ def png_jpg():
         background.paste(im, im.split()[-1])  # omit transparency
         im = background
     im.convert("RGB").save(f"""{BASE_DIR}/media/res_logo.jpg""")
-    print(Fore.YELLOW + "Done" + Fore.RESET)
+    print("Done")
 
 
 def dump():
     print("Dumping Data into Json File -> ", end=' ')
     with open("ticker_setup.json", "w") as outfile:
         outfile.write(json.dumps(CONFIG_DATA, indent=3))
-    print(Fore.YELLOW + "Done" + Fore.RESET)
+    print("Done")
 
 
 if __name__ == '__main__':
@@ -273,4 +272,4 @@ if __name__ == '__main__':
 
     dump()
     print("NEW CONFIG DATA IS: ", CONFIG_DATA)
-    print("Execution took : " + Fore.RED + "--- %s seconds ---" % (time.time() - start_time) + Fore.RESET)
+    print("Execution took : --- %s seconds ---" % (time.time() - start_time))
