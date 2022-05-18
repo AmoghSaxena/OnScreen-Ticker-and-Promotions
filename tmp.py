@@ -134,8 +134,7 @@ def ticker_optional():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
-    (-1), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (-1, 0)
 
     optional_ticker_font_size = optinal_font_n_length.ticker_font_size
     pygame.init()
