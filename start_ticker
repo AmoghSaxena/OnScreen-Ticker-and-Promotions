@@ -23,7 +23,7 @@ if [[ $? == 0 ]]; then
       TICKER_STATIC=$(cat $(dirname "$TMPE")/config.json | grep static_ticker_condition | awk '{print $2}'|cut -d , -f1)
 
       if [[ $TICKER_STATIC = "true" ]]; then
-        eval "python ticker_gtk.py &"
+        eval "python ticker_gtk.py &>> /dev/null &"
         TICKER_STATIC_PID=$!
       fi
       echo "+ CHECKING MAIN TICKER STATUS"
