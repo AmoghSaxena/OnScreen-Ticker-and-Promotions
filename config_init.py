@@ -37,6 +37,12 @@ def resize():
 
 
 def gtk_worker():
+    CONFIG_DATA['static_ticker_font_height'] = int(CONFIG_DATA ['static_ticker_font_size'] * 3)
+    CONFIG_DATA['static_ticker_font_length'] = int(
+        float(len(CONFIG_DATA['static_ticker_message']) * CONFIG_DATA['static_ticker_font_size']) / 1.9)
+    if CONFIG_DATA['static_ticker_logo']:
+        CONFIG_DATA['static_ticker_font_length'] = CONFIG_DATA['static_ticker_font_length'] + CONFIG_DATA["static_ticker_font_height"]
+
     if CONFIG_DATA["position_static_ticker"] == "top-left":
         CONFIG_DATA['gtk_ticker_pos_y'] = 0
         CONFIG_DATA['gtk_ticker_pos_x'] = 0
@@ -190,22 +196,16 @@ def font_n_length(font_name):
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.2) * (-1)
         font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * (300 - 15) / 100) + 15))
 
-
-
 def resize_gtk():
     # convert the logo to the resolution dependent
     print("Resizing the logo -> ", end=' ')
-    resize.square = int(float(resolution.width) / CONFIG_DATA['static_ticker_image_size'])
+    square = CONFIG_DATA['static_ticker_font_height']
+    print(f"FONT HEIGHT : {CONFIG_DATA['static_ticker_font_height']}")
     image = Image.open(f"""{BASE_DIR}/media/logo_gtk.png""")
-    image = image.resize((resize.square, resize.square), Image.ANTIALIAS)
+    image = image.resize((square, square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo_gtk.png""")
-    CONFIG_DATA["image_size"] = resize.square
     print("Done")
 
-def bgcolor():
-    print("Backfround color set to : ", end=' ')
-
-    print("Done")
 
 
 def png_jpg():
