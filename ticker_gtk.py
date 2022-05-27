@@ -36,7 +36,7 @@ text = font.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_f
 textpos = text.get_rect(centerx=screen.get_width() / 2)
 
 textRect = text.get_rect()
-textRect.center = (conf('static_ticker_font_length'] // 2, conf['static_ticker_font_height'] // 2))
+textRect.center = (conf['static_ticker_font_length'] // 2, conf['static_ticker_font_height'] // 2))
 print(textRect)
 print(tuple(textRect)[1])
 while True:
