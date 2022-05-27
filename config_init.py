@@ -37,11 +37,11 @@ def resize():
 
 
 def gtk_worker():
-    CONFIG_DATA['static_ticker_font_height'] = int(CONFIG_DATA ['static_ticker_font_size'] * 3)
+    CONFIG_DATA['static_ticker_font_height'] = int(CONFIG_DATA ['static_ticker_font_size'] * 3 )
     CONFIG_DATA['static_ticker_font_length'] = int(
         float(len(CONFIG_DATA['static_ticker_message']) * CONFIG_DATA['static_ticker_font_size']) / 1.9)
     if CONFIG_DATA['static_ticker_logo']:
-        CONFIG_DATA['static_ticker_font_length'] = CONFIG_DATA['static_ticker_font_length'] + CONFIG_DATA["static_ticker_font_height"]
+        CONFIG_DATA['static_ticker_font_length'] = CONFIG_DATA['static_ticker_font_length'] + 10 + CONFIG_DATA["static_ticker_font_height"]
 
     if CONFIG_DATA["position_static_ticker"] == "top-left":
         CONFIG_DATA['gtk_ticker_pos_y'] = 0

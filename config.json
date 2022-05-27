@@ -1,6 +1,6 @@
 {
    "static_ticker_condition": true,
-   "position_static_ticker": "top-left",
+   "position_static_ticker": "bottom-right",
    "static_ticker_bgcolor": [
       0,
       0,
