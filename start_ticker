@@ -36,7 +36,7 @@ if [[ $? == 0 ]]; then
         # FOR OPTIONAL TICKER
         TICKER_MAIN_OPTIONAL=$(cat $(dirname "$TMPE")/config.json | grep optional_ticker_condition | awk '{print $2}'|cut -d , -f1)
         if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
-          eval "python ticker_main.py 1 2> /dev/null &"
+          eval "python ticker_main.py 1 &"
           TICKER_MAIN_OPTIONAL_PID=$!
           eval "sleep 0.2s"
         fi
