@@ -131,7 +131,7 @@ def ticker_main():
 
 # Function -> Secondary Ticker moving above the primary(main) ticker
 def ticker_optional():
-    optinal_font_n_length()
+    # optinal_font_n_length()
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
