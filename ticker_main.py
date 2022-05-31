@@ -14,8 +14,7 @@ def ticker_main():
 
     main_ticker_font_size = conf['main_ticker_font_size']
     pygame.init()
-    pygame.display.set_caption(''
-                               '')
+    pygame.display.set_caption('MainTicker')
     windowSize = [conf['resolution_width'], conf['resolution_height'] / 8]
 
     if conf['main_ticker_logo'] == True:
