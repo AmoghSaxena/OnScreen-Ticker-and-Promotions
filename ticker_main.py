@@ -83,7 +83,7 @@ def ticker_optional():
         conf = json.load(f)
 
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
-    (-1), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
+    (0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
 
     optional_ticker_font_size = conf['optional_ticker_font_size']
     pygame.init()
