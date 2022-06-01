@@ -10,7 +10,7 @@ def ticker_main():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((-1), (conf['resolution_height']) - (int(conf['resolution_height']) / 8))
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 8))
 
     main_ticker_font_size = conf['main_ticker_font_size']
     pygame.init()

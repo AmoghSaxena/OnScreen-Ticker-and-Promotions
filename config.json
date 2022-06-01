@@ -1,53 +1,38 @@
 {
-   "static_ticker_condition": true,
-   "position_static_ticker": "top-right",
-   "static_ticker_bgcolor": [
-      0,
-      0,
-      0
-   ],
-   "static_ticker_logo": true,
-   "static_ticker_message": "",
-   "static_ticker_font_color": [
-      0,
-      0,
-      0
-   ],
-   "static_ticker_font_size": 80,
-   "static_ticker_font": "TimesNewRoman",
+   "static_ticker_condition": false,
    "main_ticker_condition": true,
-   "main_ticker_message": "Calendly and other scheduling tools are awesome. It made our lives massively easier. We're using it for business meetings, seminars, yoga classes and even calls with our families. However, most tools are very limited in terms of control and customisations",
+   "main_ticker_message": "If you have libraries and/or headers installed at non-default location (e.g. under /usr/local/), you might need to tell meson about them, since meson doesn't look for dependencies there by default.",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
    "main_ticker_font": "MyriadProFont",
-   "main_ticker_font_size": "x-large",
+   "main_ticker_font_size": "large",
    "main_ticker_bgcolor": [
-      251,
+      91,
       0,
-      0
+      119
    ],
    "main_ticker_font_color": [
+      255,
+      161,
+      0
+   ],
+   "main_ticker_speed": "normal",
+   "main_ticker_motion": "left-right",
+   "optional_ticker_condition": true,
+   "optional_ticker_message": "If you have libraries and/or headers installed at non-default location (e.g. under /usr/local/), you might need to tell meson about them, since meson doesn't look for dependencies there by default.",
+   "optional_ticker_font": "Ubuntu",
+   "optional_ticker_bgcolor": [
       255,
       255,
       255
    ],
-   "main_ticker_speed": "normal",
-   "main_ticker_motion": "right-left",
-   "optional_ticker_condition": true,
-   "optional_ticker_message": "Calendly and other scheduling tools are awesome. It made our lives massively easier. We're using it for business meetings, seminars, yoga classes and even calls with our families. However, most tools are very limited in terms of control and customisations",
-   "optional_ticker_font": "MyriadProFont",
-   "optional_ticker_bgcolor": [
-      255,
-      205,
-      0
-   ],
    "optional_ticker_font_color": [
-      0,
-      0,
-      0
+      49,
+      46,
+      46
    ],
    "optional_ticker_speed": "slow",
-   "optinal_ticker_motion": "left-right",
+   "optinal_ticker_motion": "right-left",
    "moving_ticker_condition": true,
    "moving_ticker_localtion": "right",
    "time_interval": 200
