@@ -38,7 +38,7 @@ if [[ $? == 0 ]]; then
         if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
           eval "python ticker_main.py 1 &"
           TICKER_MAIN_OPTIONAL_PID=$!
-          eval "sleep 0.2s"
+#          eval "sleep 0.2s"
         fi
         eval "python ticker_main.py 2 2> /dev/null &"
         TICKER_MAIN_PID=$!
@@ -47,7 +47,7 @@ if [[ $? == 0 ]]; then
       # FOR MOVING TICKER
       TICKER_MOVING=$(cat ticker_setup.json | grep moving_ticker_condition | awk '{print $2}'|cut -d , -f1)
       if [[ $TICKER_MOVING = "true" ]]; then
-        eval "sleep 0.2s"
+#        eval "sleep 0.2s"
         eval "python ticker_animated.py 2> /dev/null &"
         TICKER_MOVING_PID=$!
       fi
