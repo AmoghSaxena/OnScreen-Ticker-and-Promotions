@@ -38,7 +38,7 @@ if [[ $? == 0 ]]; then
         if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
           eval "python ticker_main.py 1 &"
           TICKER_MAIN_OPTIONAL_PID=$!
-          eval "sleep 0.2s"
+          eval "sleep 0.4s"
         fi
         eval "python ticker_main.py 2 2> /dev/null &"
         TICKER_MAIN_PID=$!
