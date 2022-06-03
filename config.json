@@ -1,7 +1,7 @@
 {
    "static_ticker_condition": false,
    "main_ticker_condition": true,
-   "main_ticker_position": "up",
+   "main_ticker_position": "down",
    "main_ticker_message": "fdgdfghds",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
@@ -19,7 +19,21 @@
    ],
    "main_ticker_speed": "normal",
    "main_ticker_motion": "right-left",
-   "optional_ticker_condition": false,
+   "optional_ticker_condition": true,
+   "optional_ticker_message": "uoryoyuyrtkyuk",
+   "optional_ticker_font": "MyriadProFont",
+   "optional_ticker_bgcolor": [
+      255,
+      255,
+      255
+   ],
+   "optional_ticker_font_color": [
+      55,
+      53,
+      53
+   ],
+   "optional_ticker_speed": "slow",
+   "optinal_ticker_motion": "left-right",
    "moving_ticker_condition": false,
    "time_interval": 200
 }

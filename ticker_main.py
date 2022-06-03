@@ -92,8 +92,8 @@ def ticker_optional():
     elif conf['main_ticker_position'] == 'down':
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
 
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
-    (0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
+    #os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
+    #(0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
 
     optional_ticker_font_size = conf['optional_ticker_font_size']
     pygame.init()
