@@ -1,12 +1,12 @@
 {
    "static_ticker_condition": true,
-   "position_static_ticker": "top-right",
+   "position_static_ticker": "fullscreen",
    "static_ticker_bgcolor": [
       0,
       0,
       0
    ],
-   "static_ticker_logo": false,
+   "static_ticker_logo": true,
    "static_ticker_message": "",
    "static_ticker_font_color": [
       0,
@@ -15,40 +15,7 @@
    ],
    "static_ticker_font_size": 80,
    "static_ticker_font": "TimesNewRoman",
-   "main_ticker_condition": true,
-   "main_ticker_position": "down",
-   "main_ticker_message": "You will see a stream of text as the font cache is created. This can be a lengthy body of text if you have a large number of fonts installed on your system.",
-   "main_ticker_logo": true,
-   "main_ticker_logo_position": "right",
-   "main_ticker_font": "TimesNewRoman",
-   "main_ticker_font_size": "x-large",
-   "main_ticker_bgcolor": [
-      255,
-      255,
-      255
-   ],
-   "main_ticker_font_color": [
-      0,
-      0,
-      0
-   ],
-   "main_ticker_speed": "normal",
-   "main_ticker_motion": "left-right",
-   "optional_ticker_condition": true,
-   "optional_ticker_message": "You will see a stream of text as the font cache is created. This can be a lengthy body of text if you have a large number of fonts installed on your system.",
-   "optional_ticker_font": "MyriadProFont",
-   "optional_ticker_bgcolor": [
-      255,
-      255,
-      255
-   ],
-   "optional_ticker_font_color": [
-      0,
-      0,
-      0
-   ],
-   "optional_ticker_speed": "normal",
-   "optinal_ticker_motion": "right-left",
+   "main_ticker_condition": false,
    "moving_ticker_condition": false,
    "time_interval": 200
 }
