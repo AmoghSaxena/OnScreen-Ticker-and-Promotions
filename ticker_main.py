@@ -98,7 +98,7 @@ def ticker_optional():
     optional_ticker_font_size = conf['optional_ticker_font_size']
     pygame.init()
     pygame.display.set_caption('OptionalTicker')
-    windowSize = [conf['resolution_width'], conf['resolution_height'] / 6]
+    windowSize = [conf['resolution_width'], int(conf['resolution_height'] / 24)]
 
     a = conf['resolution_width']  # for text
     b = conf['optional_ticker_font_height']

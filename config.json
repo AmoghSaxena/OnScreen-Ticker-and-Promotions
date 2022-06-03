@@ -1,39 +1,25 @@
 {
    "static_ticker_condition": false,
    "main_ticker_condition": true,
-   "main_ticker_message": "If you have libraries and/or headers installed at non-default location (e.g. under /usr/local/), you might need to tell meson about them, since meson doesn't look for dependencies there by default.",
+   "main_ticker_position": "up",
+   "main_ticker_message": "fdgdfghds",
    "main_ticker_logo": true,
    "main_ticker_logo_position": "left",
-   "main_ticker_font": "MyriadProFont",
-   "main_ticker_font_size": "large",
+   "main_ticker_font": "Ubuntu",
+   "main_ticker_font_size": "x-large",
    "main_ticker_bgcolor": [
-      91,
       0,
-      119
-   ],
-   "main_ticker_font_color": [
-      255,
-      161,
+      0,
       0
    ],
-   "main_ticker_speed": "normal",
-   "main_ticker_motion": "left-right",
-   "optional_ticker_condition": true,
-   "optional_ticker_message": "If you have libraries and/or headers installed at non-default location (e.g. under /usr/local/), you might need to tell meson about them, since meson doesn't look for dependencies there by default.",
-   "optional_ticker_font": "Ubuntu",
-   "optional_ticker_bgcolor": [
+   "main_ticker_font_color": [
       255,
       255,
       255
    ],
-   "optional_ticker_font_color": [
-      49,
-      46,
-      46
-   ],
-   "optional_ticker_speed": "slow",
-   "optinal_ticker_motion": "right-left",
-   "moving_ticker_condition": true,
-   "moving_ticker_localtion": "right",
+   "main_ticker_speed": "normal",
+   "main_ticker_motion": "right-left",
+   "optional_ticker_condition": false,
+   "moving_ticker_condition": false,
    "time_interval": 200
 }
