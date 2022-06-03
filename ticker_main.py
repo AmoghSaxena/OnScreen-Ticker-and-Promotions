@@ -10,7 +10,11 @@ def ticker_main():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 8))
+
+    if conf['main_ticker_position'] == 'up':
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (int(conf['resolution_height']) / 24))
+    elif conf['main_ticker_position'] == 'down':
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 8))
 
     main_ticker_font_size = conf['main_ticker_font_size']
     pygame.init()
@@ -81,6 +85,12 @@ def ticker_optional():
     # optinal_font_n_length()
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
+
+
+    if conf['main_ticker_position'] == 'up':
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (0))
+    elif conf['main_ticker_position'] == 'down':
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
 
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
     (0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
