@@ -26,7 +26,7 @@ pygame.init()
 screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
 
 # set the pygame window name
-pygame.display.set_caption('splashtitle')
+pygame.display.set_caption('StaticTicker')
 
 font = pygame.font.SysFont(conf['static_ticker_font'], conf['static_ticker_font_size'])
 
