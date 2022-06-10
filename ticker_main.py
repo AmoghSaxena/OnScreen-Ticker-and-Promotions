@@ -87,7 +87,7 @@ def ticker_optional():
         conf = json.load(f)
 
 
-    if conf['main_ticker_position'] == 'up':
+    if conf['optional_ticker_position'] == 'up':
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (0))
     elif conf['main_ticker_position'] == 'down':
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
