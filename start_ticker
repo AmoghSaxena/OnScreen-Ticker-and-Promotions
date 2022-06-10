@@ -26,20 +26,21 @@ if [[ $? == 0 ]]; then
         eval "python ticker_gtk.py 2> /dev/null &"
         TICKER_STATIC_PID=$!
       fi
-      echo "+ CHECKING MAIN TICKER STATUS"
 
+      eval "echo + CHECKING OPTIONAL TICKER STATUS"
+
+      # FOR OPTIONAL TICKER
+      TICKER_MAIN_OPTIONAL=$(cat $(dirname "$TMPE")/config.json | grep optional_ticker_condition | awk '{print $2}'|cut -d , -f1)
+      if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
+        eval "python ticker_main.py 1 &"
+        TICKER_MAIN_OPTIONAL_PID=$!
+#          eval "sleep 0.2s"
+      fi
+
+      echo "+ CHECKING MAIN TICKER STATUS"
       # FOR MAIN TICKER
       TICKER_MAIN=$(cat $(dirname "$TMPE")/config.json | grep main_ticker_condition | awk '{print $2}'|cut -d , -f1)
       if [[ $TICKER_MAIN = "true" ]]; then
-        eval "echo + CHECKING OPTIONAL TICKER STATUS"
-
-        # FOR OPTIONAL TICKER
-        TICKER_MAIN_OPTIONAL=$(cat $(dirname "$TMPE")/config.json | grep optional_ticker_condition | awk '{print $2}'|cut -d , -f1)
-        if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
-          eval "python ticker_main.py 1 &"
-          TICKER_MAIN_OPTIONAL_PID=$!
-#          eval "sleep 0.2s"
-        fi
         eval "python ticker_main.py 2 2> /dev/null &"
         TICKER_MAIN_PID=$!
       fi
