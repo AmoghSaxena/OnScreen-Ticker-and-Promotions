@@ -18,7 +18,7 @@ if 'right' in conf['position_static_ticker']:
 elif 'left' in conf['position_static_ticker']:
     x_length = 0
 #
-if 'center' not in conf['position_static_ticker']:
+if ('center' not in conf['position_static_ticker']) or ('fullscreen' not in conf['position_static_ticker']):
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x_length, y_length)
 
 pygame.init()
