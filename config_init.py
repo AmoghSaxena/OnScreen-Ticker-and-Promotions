@@ -37,6 +37,12 @@ def resize():
 
 
 def gtk_worker():
+    CONFIG_DATA['static_ticker_font_height'] = int(CONFIG_DATA ['static_ticker_font_size'] * 3 )
+    CONFIG_DATA['static_ticker_font_length'] = int(
+        float(len(CONFIG_DATA['static_ticker_message']) * CONFIG_DATA['static_ticker_font_size']) / 1.9)
+    if CONFIG_DATA['static_ticker_logo']:
+        CONFIG_DATA['static_ticker_font_length'] = CONFIG_DATA['static_ticker_font_length'] + 10 + CONFIG_DATA["static_ticker_font_height"]
+
     if CONFIG_DATA["position_static_ticker"] == "top-left":
         CONFIG_DATA['gtk_ticker_pos_y'] = 0
         CONFIG_DATA['gtk_ticker_pos_x'] = 0
@@ -191,21 +197,70 @@ def font_n_length(font_name):
         font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * (300 - 15) / 100) + 15))
 
 
+def optinal_font_n_length(font_name):
+    message = CONFIG_DATA['optional_ticker_message']
+    ############## LIST OF ENGLISH FONTS ################
+    if font_name == "MyriadProFont":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.8) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 120)
+
+    elif font_name == "Ubuntu":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 548)
+
+    elif font_name == "TimesNewRoman":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.3) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 385)
+    #####################################################
+
+    ############ LIST OF RUSSIAN FONTS #################
+    if font_name == "NotoSansArabic":
+        optinal_font_n_length.ticker_font_size = 20
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.5) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 1000)
+    ####################################################
+
+    ########### LIST OF FREE FONTS ###################
+    if font_name == "FreeSans":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.9) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 500)
+    ####################################################
+
+    ########### LIST OF CHINESE FONTS ###################
+    if font_name == "ZCOOLQingKeHuangYou":
+        optinal_font_n_length.ticker_font_size = 40
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.2) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 500)
+    ####################################################
+
+    ########### LIST OF JAPANESE FONTS ###################
+    if font_name == "NotoSansJP":
+        optinal_font_n_length.ticker_font_size = 30
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.2) * (-1)
+        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 800)
+    ####################################################
+
+
+
+
 
 def resize_gtk():
     # convert the logo to the resolution dependent
     print("Resizing the logo -> ", end=' ')
-    resize.square = int(float(resolution.width) / CONFIG_DATA['static_ticker_image_size'])
+    square = CONFIG_DATA['static_ticker_font_height']
+    print(f"FONT HEIGHT : {CONFIG_DATA['static_ticker_font_height']}")
     image = Image.open(f"""{BASE_DIR}/media/logo_gtk.png""")
-    image = image.resize((resize.square, resize.square), Image.ANTIALIAS)
+    if CONFIG_DATA['position_static_ticker'] == "fullscreen":
+        image = image.resize((CONFIG_DATA["resolution_width"], CONFIG_DATA["resolution_height"]), Image.ANTIALIAS)
+    else:
+        image = image.resize((square, square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo_gtk.png""")
-    CONFIG_DATA["image_size"] = resize.square
     print("Done")
 
-def bgcolor():
-    print("Backfround color set to : ", end=' ')
-
-    print("Done")
 
 
 def png_jpg():
@@ -263,6 +318,14 @@ if __name__ == '__main__':
             ticker_speed(CONFIG_DATA['optional_ticker_speed'])
             CONFIG_DATA['optional_block_skip'] = ticker_speed.block_skip
             CONFIG_DATA['optional_time_sleep'] = ticker_speed.time_sleep
+
+            if CONFIG_DATA['optional_ticker_font'] in ['Ubuntu', 'NotoSansArabic', 'TimesNewRoman', 'MyriadProFont','ZCOOLQingKeHuangYou', 'NotoSansJP']:
+                optinal_font_n_length(CONFIG_DATA['optional_ticker_font'])
+            else:
+                optinal_font_n_length("FreeSans")
+            CONFIG_DATA['optional_ticker_font_size'] = optinal_font_n_length.ticker_font_size
+            CONFIG_DATA['optional_ticker_font_length'] = optinal_font_n_length.left_length
+            CONFIG_DATA['optional_ticker_font_height'] = optinal_font_n_length.optional_ticker_hight
 
     if CONFIG_DATA['moving_ticker_condition'] == True:
         if CONFIG_DATA['moving_ticker_localtion'] == 'center':

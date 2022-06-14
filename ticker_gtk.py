@@ -1,80 +1,61 @@
 import os
-import gi
-import sys
 import json
-
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, Gdk, Pango
-args = sys.argv
+import pygame
+from PIL import Image
 
 with open("ticker_setup.json", "r") as f:
-    setup = json.load(f)
-pos = setup["position_static_ticker"]
-print(setup)
-font_and_size = setup['static_ticker_font'] + " " + str(setup['static_ticker_font_size'])
+    conf = json.load(f)
 
-class Splash(Gtk.Window):
+conf['static_ticker_font_height'] = int(conf['static_ticker_font_size'] * 3)
+conf['static_ticker_font'] = 'Ubuntu'
 
-    def __init__(self):
-        Gtk.Window.__init__(self, title="splashtitle")
-        Gtk.Window.set_keep_above()
-        maingrid = Gtk.Grid()
-        self.add(maingrid)
-        maingrid.set_border_width(40)
-        # set text for the spash window
-        label = Gtk.Label(setup['static_ticker_message'])
-        label.modify_font(Pango.FontDescription(font_and_size))
-        maingrid.attach(label, 255, 255, 255, 1)
+if 'bottom' in conf['position_static_ticker']:
+    y_length = conf['resolution_height'] - conf['static_ticker_font_height']
+elif 'top' in conf['position_static_ticker']:
+    y_length = 0
+if 'right' in conf['position_static_ticker']:
+    x_length = conf['resolution_width'] - conf['static_ticker_font_length']
+elif 'left' in conf['position_static_ticker']:
+    x_length = 0
+if 'fullscreen' in conf['position_static_ticker']:
+    x_length = 0
+    y_length = 0
+#
+if 'center' not in conf['position_static_ticker']:
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x_length, y_length)
 
-def splashwindow():
-    window = Splash()
-    window.set_decorated(False)
-    window.set_resizable(False)
-    window.override_background_color(Gtk.StateType.NORMAL, Gdk.RGBA(setup['static_ticker_bgcolor'][0],setup['static_ticker_bgcolor'][1],setup['static_ticker_bgcolor'][2]))
-    window.modify_fg(Gtk.StateFlags.NORMAL, Gdk.color_parse(setup['static_ticker_font_color']))
-    if pos == "center":
-        window.set_position(Gtk.WindowPosition.CENTER)
-    else:
-        window.set_position(Gtk.WindowPosition.MOUSE)
-    window.show_all()
-    Gtk.Window.set_keep_above()
-    Gtk.main()
+pygame.init()
 
-class SplashImage(Gtk.Window):
-
-    def __init__(self):
-        Gtk.Window.__init__(self, title="splashtitle")
-        maingrid = Gtk.Grid()
-        self.add(maingrid)
-
-        image = Gtk.Image()
-        # set the path to the image below
-        image.set_from_file("media/res_logo_gtk.png")
-        maingrid.attach(image, 1, 0, 1, 1)
-
-        maingrid.set_border_width(20)
-        # set text for the spash window
-        label = Gtk.Label(setup['static_ticker_message'])
-        label.modify_font(Pango.FontDescription(font_and_size))
-        maingrid.attach(label, 0, 0, 1, 1)
-
-def splashwindowimage():
-    window = SplashImage()
-    window.set_decorated(False)
-    window.set_resizable(False)
-    window.override_background_color(Gtk.StateType.NORMAL, Gdk.RGBA(setup['static_ticker_bgcolor'][0],setup['static_ticker_bgcolor'][1],setup['static_ticker_bgcolor'][2]))
-    window.modify_fg(Gtk.StateFlags.NORMAL, Gdk.color_parse(setup['static_ticker_font_color']))
-    window.set_opacity(0.8)
-    if pos == "center":
-        window.set_position(Gtk.WindowPosition.CENTER)
-    else:
-        window.set_position(Gtk.WindowPosition.MOUSE)
-    window.show_all()
-
-    Gtk.main()
-if pos != "center":
-    os.system(f"xdotool mousemove {setup['gtk_ticker_pos_x']} {setup['gtk_ticker_pos_y']}")
-if setup['static_ticker_logo'] == True:
-    splashwindowimage()
+if 'fullscreen' not in conf['position_static_ticker']:
+    screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
 else:
-    splashwindow()
+    screen = pygame.display.set_mode((conf['resolution_width'], conf['resolution_height']))
+# set the pygame window name
+pygame.display.set_caption('StaticTicker')
+
+# font = pygame.font.SysFont(conf['static_ticker_font'], conf['static_ticker_font_size'])
+# text = font.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_font_color']))
+
+fonting = pygame.font.SysFont(conf['static_ticker_font'], conf['static_ticker_font_size'])
+texting = fonting.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_font_color']))
+
+# text = font.render("score: " + str(score), 1, (10, 10, 10))
+textpos = texting.get_rect(centerx=screen.get_width() / 2)
+
+textRect = texting.get_rect()
+textRect.center = (conf['static_ticker_font_length'] // 2, conf['static_ticker_font_height'] // 2)
+print(textRect)
+print(tuple(textRect)[1])
+while True:
+    screen.fill(tuple(conf['static_ticker_bgcolor']))
+    if conf['static_ticker_logo'] == True:
+        picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
+        screen.blit(texting, ((conf["static_ticker_font_height"]), tuple(textRect)[1]))
+        screen.blit(picture, (0, 0))
+    if conf['static_ticker_logo'] == False:
+        screen.blit(texting, (textRect))
+
+    pygame.display.flip()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            finished = True
