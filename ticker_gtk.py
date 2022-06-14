@@ -45,7 +45,10 @@ def static_ticker():
 def static_ticker_center():
     pygame.init()
 
-    screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
+    conf['static_ticker_font_height'] = int(conf['static_ticker_font_size'] * 4)
+    # conf['static_ticker_font'] = 'Ubuntu'
+
+    screen = pygame.display.set_mode((conf['static_ticker_font_height']+ 200, conf['static_ticker_font_height']))
     # set the pygame window name
     pygame.display.set_caption('StaticTicker')
 
@@ -78,9 +81,6 @@ def static_ticker_center():
 
 
 
-
-# conf['static_ticker_font_height'] = int(conf['static_ticker_font_size'] * 3)
-# conf['static_ticker_font'] = 'Ubuntu'
 
 if 'bottom' in conf['position_static_ticker']:
     y_length = conf['resolution_height'] - conf['static_ticker_font_height']
