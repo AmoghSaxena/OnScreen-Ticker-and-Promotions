@@ -67,7 +67,7 @@ def static_ticker_center():
         if conf['static_ticker_logo'] == True:
             picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
             screen.blit(texting, ((conf["static_ticker_font_height"]), tuple(textRect)[1]))
-            screen.blit(picture, (space_image, 20))
+            screen.blit(picture, (space_image, space_image))
         if conf['static_ticker_logo'] == False:
             screen.blit(texting, (textRect))
 
