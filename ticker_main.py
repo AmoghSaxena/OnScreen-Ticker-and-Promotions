@@ -140,9 +140,9 @@ def ticker_optional():
                 if event.type == pygame.QUIT:
                     finished = True
 
-    if conf['optinal_ticker_motion'] == "right-left":
+    if conf['optional_ticker_motion'] == "right-left":
         optional_right_to_left(a, b, conf['optional_block_skip'], conf['optional_time_sleep'])
-    elif conf['optinal_ticker_motion'] == "left-right":
+    elif conf['optional_ticker_motion'] == "left-right":
         optional_left_to_right(a, b, conf['optional_block_skip'], conf['optional_time_sleep'])
 
     pygame.quit()
