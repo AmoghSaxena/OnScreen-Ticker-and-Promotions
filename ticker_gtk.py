@@ -56,7 +56,7 @@ def static_ticker_center():
     fonting = pygame.font.SysFont(conf['static_ticker_font'], 10)
     texting = fonting.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_font_color']))
 
-    textpos = texting.get_rect(centerx=screen.get_height() / 3)
+    # textpos = texting.get_rect(centerx=screen.get_height() / 3)
 
     textRect = texting.get_rect()
     textRect.center = (conf['static_ticker_font_length'] // 2, conf['static_ticker_font_height'] // 2)
@@ -66,7 +66,7 @@ def static_ticker_center():
         screen.fill(tuple(conf['static_ticker_bgcolor']))
         if conf['static_ticker_logo'] == True:
             picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
-            screen.blit(texting, ((conf["static_ticker_font_height"]), tuple(textRect)[1]))
+            screen.blit(texting, (10,100)
             screen.blit(picture, (space_image, space_image))
         if conf['static_ticker_logo'] == False:
             screen.blit(texting, (textRect))
