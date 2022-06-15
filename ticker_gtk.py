@@ -61,7 +61,7 @@ def static_ticker_center():
     textRect = texting.get_rect()
     textRect.center = (conf['static_ticker_font_length'] // 2, conf['static_ticker_font_height'] // 2)
     print(textpos)
-    print(tuple(textRect)[1])
+    print(tuple(textpos)[1])
     while True:
         screen.fill(tuple(conf['static_ticker_bgcolor']))
         picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
