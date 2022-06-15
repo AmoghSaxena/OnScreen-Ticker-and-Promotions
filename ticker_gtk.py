@@ -53,7 +53,7 @@ def static_ticker_center():
     # set the pygame window name
     pygame.display.set_caption('StaticTicker')
 
-    fonting = pygame.font.SysFont(conf['static_ticker_font'], (conf['static_ticker_font_size']/2))
+    fonting = pygame.font.SysFont(conf['static_ticker_font'], 40)
     texting = fonting.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_font_color']))
 
     textpos = texting.get_rect(centerx=screen.get_width() / 2)
