@@ -19,6 +19,16 @@ if [[ $? == 0 ]]; then
      eval "python config_init.py"
      echo "+ CHECKING STATIC TICKER STATUS"
 
+
+     TICKER_EMERGENCY=$(cat $(dirname "$TMPE")/config.json | grep emergency_ticker_condition | awk '{print $2}'|cut -d , -f1)
+
+      if [[ TICKER_EMERGENCY = "true" ]]; then
+        eval "python ticker_emergency.py 2> /dev/null &"
+        TICKER_EMERGENCY_PID=$!
+        bash $(dirname "$TMPE")/stop_ticker $TICKER_EMERGENCY_PID &
+        exit 0
+      fi
+
       # FOR STATIC TICKER
       TICKER_STATIC=$(cat $(dirname "$TMPE")/config.json | grep static_ticker_condition | awk '{print $2}'|cut -d , -f1)
 
