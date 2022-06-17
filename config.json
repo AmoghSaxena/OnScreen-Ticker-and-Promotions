@@ -1,8 +1,24 @@
 {
-   "static_ticker_condition": false,
+   "static_ticker_condition": true,
+   "position_static_ticker": "bottom-right",
+   "static_ticker_bgcolor": [
+      0,
+      0,
+      0
+   ],
+   "static_ticker_logo": true,
+   "static_ticker_message": "trtryuyr",
+   "static_ticker_font_color": [
+      255,
+      255,
+      255
+   ],
+   "static_ticker_font_size": 80,
+   "static_ticker_font": "TimesNewRoman",
    "main_ticker_condition": false,
    "optional_ticker_condition": false,
    "moving_ticker_condition": true,
-   "moving_ticker_localtion": "bottom-right",
+   "moving_ticker_localtion": "center",
+   "moving_ticker_center_size": "large",
    "time_interval": 200
 }
