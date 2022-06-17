@@ -89,7 +89,7 @@ def ticker_optional():
 
     if conf['optional_ticker_position'] == 'up':
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (0))
-    elif conf['main_ticker_position'] == 'down':
+    elif conf['optional_ticker_position'] == 'down':
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (conf['resolution_height']) - (int(conf['resolution_height']) / 6))
 
     #os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (
