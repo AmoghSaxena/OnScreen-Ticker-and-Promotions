@@ -24,3 +24,5 @@ def static_ticker():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 finished = True
+
+static_ticker()
