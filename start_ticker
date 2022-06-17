@@ -43,7 +43,6 @@ if [[ $? == 0 ]]; then
       if [[ $TICKER_MAIN_OPTIONAL = "true" ]]; then
         eval "python ticker_main.py 1 2> /dev/null &"
         TICKER_MAIN_OPTIONAL_PID=$!
-#          eval "sleep 0.2s"
       fi
 
       echo "+ CHECKING MAIN TICKER STATUS"
