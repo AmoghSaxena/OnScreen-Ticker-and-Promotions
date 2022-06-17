@@ -12,6 +12,10 @@ for KILLPID in `ps ax | grep 'ticker_gtk.py' | awk '{print $1;}'`; do
 kill -9 $KILLPID &> /dev/null;
 done
 
+for KILLPID in `ps ax | grep 'ticker_emergency.py' | awk '{print $1;}'`; do
+kill -9 $KILLPID &> /dev/null;
+done
+
 for KILLPID in `ps ax | grep 'start_ticker' | awk '{print $1;}'`; do
 kill -9 $KILLPID &> /dev/null;
 done
