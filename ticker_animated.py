@@ -46,7 +46,6 @@ def ticker_animated_sides():
     elif conf['moving_ticker_localtion'] == "top-left":
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, 0)
 
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, (conf['resolution_height'] - size)) # Size of animated ticker
     clip = VideoFileClip('media/myvideo.mp4').resize((size, size)) # Size of animated Ticker
 
     while True:
