@@ -1,9 +1,8 @@
 {
-   "static_ticker_condition": true,
-   "position_static_ticker": "fullscreen",
-   "static_ticker_logo": true,
+   "static_ticker_condition": false,
    "main_ticker_condition": false,
    "optional_ticker_condition": false,
-   "moving_ticker_condition": false,
+   "moving_ticker_condition": true,
+   "moving_ticker_localtion": "bottom-right",
    "time_interval": 200
 }
