@@ -17,7 +17,7 @@ if [[ $? == 0 ]]; then
    if [[ $(python -c 'import sys; print(sys.version_info[:][0])') > 2 ]]; then
      echo "+ SETTING UP CONFIGURATIONS FOR THE PROGRAM..."
      eval "python config_init.py"
-     echo "+ CHECKING STATIC TICKER STATUS"
+     echo "+ CHECKING EMERGENCY TICKER STATUS"
 
 
      TICKER_EMERGENCY=$(cat $(dirname "$TMPE")/config.json | grep emergency_ticker_condition | awk '{print $2}'|cut -d , -f1)
@@ -29,6 +29,7 @@ if [[ $? == 0 ]]; then
         exit 0
       fi
 
+      echo "+ CHECKING STATIC TICKER STATUS"
       # FOR STATIC TICKER
       TICKER_STATIC=$(cat $(dirname "$TMPE")/config.json | grep static_ticker_condition | awk '{print $2}'|cut -d , -f1)
 
