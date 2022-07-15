@@ -3,6 +3,7 @@ import os
 import pygame
 from moviepy.editor import *
 
+global size
 
 def ticker_animated_sides():
     with open("ticker_setup.json", "r") as f:
@@ -32,7 +33,6 @@ def ticker_animated_center():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
-        global size
 
         if conf['moving_ticker_center_size'] == "normal":
             size = 2
