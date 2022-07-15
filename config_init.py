@@ -62,18 +62,19 @@ def gtk_worker():
         CONFIG_DATA['gtk_ticker_pos_x'] = 0
 
 def ticker_animated_center():
+    global size
     if CONFIG_DATA['moving_ticker_center_size'] == "normal":
         size = 2
-        global size
+        # global size
     elif CONFIG_DATA['moving_ticker_center_size'] == "small":
         size = 4
-        global size
+        # global size
     elif CONFIG_DATA['moving_ticker_center_size'] == "large":
         size = 1.5
-        global size
+        # global size
     elif CONFIG_DATA['moving_ticker_center_size'] == "full":
         size = 1
-        global size
+        # global size
 
     CONFIG_DATA['ticker_animated_center_width'] = int(conf['resolution_width'] / size)
     CONFIG_DATA['ticker_animated_center_height'] = int(conf['resolution_height'] / size)
