@@ -34,7 +34,8 @@ def ticker_main():
 
     # message = conf['ticker_message']
     message = conf['main_ticker_message']
-    picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo.jpg')
+    if conf['main_ticker_logo'] == True:
+        picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo.jpg')
     fonting = pygame.font.SysFont(conf['main_ticker_font'], main_ticker_font_size)
     texting = fonting.render(message, 1, tuple(conf['main_ticker_font_color']))
     screen = pygame.display.set_mode(windowSize)
