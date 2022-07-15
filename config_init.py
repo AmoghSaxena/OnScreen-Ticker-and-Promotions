@@ -15,7 +15,7 @@ CONFIG_DATA = conf
 resize_condition = False
 CONFIG_DATA["BASE_DIR"] = str(BASE_DIR)
 
-
+size = 1
 # Function to check the resolution size of the screen
 def resolution():
     print("Resolution : ", end=' ')
@@ -63,16 +63,16 @@ def gtk_worker():
 
 def ticker_animated_center():
     if CONFIG_DATA['moving_ticker_center_size'] == "normal":
-        ticker_animated_center.size = 2
+        size = 2
     elif CONFIG_DATA['moving_ticker_center_size'] == "small":
-        ticker_animated_center.size = 4
+        size = 4
     elif CONFIG_DATA['moving_ticker_center_size'] == "large":
-        ticker_animated_center.size = 1.5
+        size = 1.5
     elif CONFIG_DATA['moving_ticker_center_size'] == "full":
-        ticker_animated_center.size = 1
+        size = 1
 
-    CONFIG_DATA['ticker_animated_center_width'] = int(conf['resolution_width'] / ticker_animated_center.size)
-    CONFIG_DATA['ticker_animated_center_height'] = int(conf['resolution_height'] / ticker_animated_center.size)
+    CONFIG_DATA['ticker_animated_center_width'] = int(conf['resolution_width'] / size)
+    CONFIG_DATA['ticker_animated_center_height'] = int(conf['resolution_height'] / size)
 
 
 def ticker_speed(speed):
