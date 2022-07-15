@@ -63,16 +63,16 @@ def gtk_worker():
 
 def ticker_animated_center():
     if CONFIG_DATA['moving_ticker_center_size'] == "normal":
-        size = 2
+        ticker_animated_center.size = 2
     elif CONFIG_DATA['moving_ticker_center_size'] == "small":
-        size = 4
+        ticker_animated_center.size = 4
     elif CONFIG_DATA['moving_ticker_center_size'] == "large":
-        size = 1.5
+        ticker_animated_center.size = 1.5
     elif CONFIG_DATA['moving_ticker_center_size'] == "full":
-        size = 1
+        ticker_animated_center.size = 1
 
-    CONFIG_DATA['ticker_animated_center_width'] = int(conf['resolution_width']/size)
-    CONFIG_DATA['ticker_animated_center_height'] = int(conf['resolution_height'] / size)
+    CONFIG_DATA['ticker_animated_center_width'] = int(conf['resolution_width'] / ticker_animated_center.size)
+    CONFIG_DATA['ticker_animated_center_height'] = int(conf['resolution_height'] / ticker_animated_center.size)
 
 
 def ticker_speed(speed):
