@@ -3,8 +3,7 @@
    "main_ticker_condition": false,
    "optional_ticker_condition": false,
    "moving_ticker_condition": true,
-   "moving_ticker_localtion": "center",
-   "moving_ticker_center_size": "normal",
+   "moving_ticker_localtion": "top-left",
    "emergency_ticker_condition": false,
    "time_interval": 500
 }
