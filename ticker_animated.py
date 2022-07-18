@@ -20,12 +20,6 @@ def ticker_animated_sides():
     elif conf['moving_ticker_localtion'] == "top-left":
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, 0)
 
-    clip = VideoFileClip("media/myvideo.mp4")
-    value = clip.size
-    print(value)
-    ratio = value[0]/value[1]
-
-
     clip = VideoFileClip('media/myvideo.mp4').resize((ratio * size, size))# Size of animated Ticker
 
     while True:
@@ -62,4 +56,8 @@ with open("ticker_setup.json", "r") as f:
 if conf['moving_ticker_localtion'] == "center":
     ticker_animated_center()
 else:
+    clip = VideoFileClip("media/myvideo.mp4")
+    value = clip.size
+    print(value)
+    ratio = value[0] / value[1]
     ticker_animated_sides()
