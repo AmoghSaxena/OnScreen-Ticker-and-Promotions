@@ -13,9 +13,9 @@ def static_ticker():
 
     if 'fullscreen' not in conf['position_static_ticker']:
         if conf['static_ticker_logo'] == True:
-            image = Image.open(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
-            image_width = image.size[0]
-            image_height = image.size[1]
+            # image = Image.open(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
+            # image_width = image.size[0]
+            # image_height = image.size[1]
             screen = pygame.display.set_mode((image_width, image_height))
         else:
             screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
@@ -91,14 +91,20 @@ def static_ticker_center():
 
 
 
-
+if conf['static_ticker_logo'] == True:
+    image = Image.open(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
+    image_width = image.size[0]
+    image_height = image.size[1]
 
 if 'bottom' in conf['position_static_ticker']:
     y_length = conf['resolution_height'] - conf['static_ticker_font_height']
 elif 'top' in conf['position_static_ticker']:
     y_length = 0
 if 'right' in conf['position_static_ticker']:
-    x_length = conf['resolution_width'] - conf['static_ticker_font_length']
+    if conf['static_ticker_logo'] == True:
+        x_length = conf['resolution_width'] - image_width
+    else:
+        x_length = conf['resolution_width'] - conf['static_ticker_font_length']
 elif 'left' in conf['position_static_ticker']:
     x_length = 0
 if 'fullscreen' in conf['position_static_ticker']:
