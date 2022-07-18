@@ -23,6 +23,8 @@ def ticker_animated_sides():
     clip = VideoFileClip("media/myvideo.mp4")
     value = clip.size
     print(value)
+    print(value[0])
+    print(value[0])
 
 
     clip = VideoFileClip('media/myvideo.mp4').resize((size, size))# Size of animated Ticker
