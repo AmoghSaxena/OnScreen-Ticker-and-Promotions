@@ -9,7 +9,6 @@ value = clip.size
 print(value)
 ratio = value[0] / value[1]
 
-global ratio
 def ticker_animated_sides():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
