@@ -2,6 +2,7 @@ import os
 import json
 import pygame
 from PIL import Image
+from PIL import ImageGrab
 
 with open("ticker_setup.json", "r") as f:
     conf = json.load(f)
@@ -11,7 +12,10 @@ def static_ticker():
     pygame.init()
 
     if 'fullscreen' not in conf['position_static_ticker']:
-        screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
+        if conf['static_ticker_logo'] == True:
+            screen = pygame.display.set_mode((conf['image_width'], conf['image_height']))
+        else:
+            screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
     else:
         screen = pygame.display.set_mode((conf['resolution_width'], conf['resolution_height']))
 

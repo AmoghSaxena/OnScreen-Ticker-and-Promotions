@@ -261,9 +261,9 @@ def resize_gtk():
     square = CONFIG_DATA['static_ticker_font_height']
     print(f"FONT HEIGHT : {CONFIG_DATA['static_ticker_font_height']}")
     image = Image.open(f"""{BASE_DIR}/media/logo_gtk.png""")
-    image_width = image.size[0]
-    image_height = image.size[1]
-    image_ratio = image_width / image_height
+    CONFIG_DATA['image_width'] = image.size[0]
+    CONFIG_DATA['image_height'] = image.size[1]
+    image_ratio = CONFIG_DATA['image_width'] / CONFIG_DATA['image_height']
     print('Ratio before conversion:', image_ratio)
     if CONFIG_DATA['position_static_ticker'] == "fullscreen":
         image = image.resize((CONFIG_DATA["resolution_width"], CONFIG_DATA["resolution_height"]), Image.ANTIALIAS)
