@@ -9,7 +9,7 @@ def ticker_animated_sides():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
 
-    size = int(conf['resolution_height']/4.9)
+    size = int(conf['resolution_height']/4)
 
     if conf['moving_ticker_localtion'] == "bottom-right":
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((conf['resolution_width'] - size), (conf['resolution_height'] - size))
@@ -23,11 +23,10 @@ def ticker_animated_sides():
     clip = VideoFileClip("media/myvideo.mp4")
     value = clip.size
     print(value)
-    print(value[0])
-    print(value[0])
+    ratio = value[0]/value[1]
 
 
-    clip = VideoFileClip('media/myvideo.mp4').resize((size, size))# Size of animated Ticker
+    clip = VideoFileClip('media/myvideo.mp4').resize((ratio * size, size))# Size of animated Ticker
 
     while True:
         clip.preview()
