@@ -13,7 +13,10 @@ def static_ticker():
 
     if 'fullscreen' not in conf['position_static_ticker']:
         if conf['static_ticker_logo'] == True:
-            screen = pygame.display.set_mode((conf['image_width'], conf['image_height']))
+            image = Image.open(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
+            image_width = image.size[0]
+            image_height = image.size[1]
+            screen = pygame.display.set_mode((image_width, image_height))
         else:
             screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
     else:
