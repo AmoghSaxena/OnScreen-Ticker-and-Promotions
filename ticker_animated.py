@@ -16,11 +16,11 @@ def ticker_animated_sides():
     size = int(conf['resolution_height']/3)
 
     if conf['moving_ticker_localtion'] == "bottom-right":
-        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((conf['resolution_width'] - (ratio * size)), (conf['resolution_height'] - size))
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((conf['resolution_width'] - (ratio * size)) - 20, (conf['resolution_height'] - size + 20))
     elif conf['moving_ticker_localtion'] == "bottom-left":
-        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, (conf['resolution_height'] - size))
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, (conf['resolution_height'] - size + 20))
     elif conf['moving_ticker_localtion'] == "top-right":
-        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((conf['resolution_width'] - (ratio * size)), 0)
+        os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((conf['resolution_width'] - (ratio * size)) - 20, 0)
     elif conf['moving_ticker_localtion'] == "top-left":
         os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, 0)
 
