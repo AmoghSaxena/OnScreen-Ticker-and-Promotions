@@ -47,7 +47,7 @@ def ticker_animated_center():
         elif conf['moving_ticker_center_size'] == "full":
             size = 1
 
-    clip = VideoFileClip('media/myvideo.mp4').resize((int(conf['resolution_width']/size), int(conf['resolution_height']/size))) # Size of animated Ticker
+    clip = VideoFileClip('media/myvideo.mp4').resize((int(conf['resolution_width']/size), int(conf['resolution_height']/size))).margin(top=110, bottom=110) # Size of animated Ticker
 
     while True:
         clip.preview()
