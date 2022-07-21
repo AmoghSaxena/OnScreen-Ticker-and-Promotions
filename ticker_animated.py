@@ -33,6 +33,7 @@ def ticker_animated_sides():
 
 
 
+
 def ticker_animated_center():
     global size
     with open("ticker_setup.json", "r") as f:
