@@ -31,7 +31,7 @@ elif conf['moving_ticker_localtion'] == "top-left":
 if conf['moving_ticker_center_size'] == "full":
     clip = clip_video.resize((int(conf['resolution_width']), int(conf['resolution_height'])))
 else:
-    clip = clip_video.resize((ratio * size, size)).margin(mar=10, color=(tuple(conf['moving_ticker_color'])))
+    clip = clip_video.resize((int(conf['resolution_width']/size) * ratio, int(conf['resolution_width']/size))).margin(mar=10, color=(tuple(conf['moving_ticker_color'])))
 
 while True:
     clip.preview()
