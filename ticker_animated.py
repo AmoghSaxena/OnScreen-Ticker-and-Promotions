@@ -9,6 +9,8 @@ value = clip.size
 print(value)
 ratio = value[0] / value[1]
 
+print(tuple(conf['moving_ticker_color'])
+
 def ticker_animated_sides():
     with open("ticker_setup.json", "r") as f:
         conf = json.load(f)
@@ -45,7 +47,7 @@ def ticker_animated_center():
         elif conf['moving_ticker_center_size'] == "large":
             size = 1.5
         elif conf['moving_ticker_center_size'] == "full":
-            size = 1
+            clip = VideoFileClip('media/myvideo.mp4').resize((int(conf['resolution_width']), int(conf['resolution_height']))).margin(mar=10, color=(110, 5, 27))
 
     clip = VideoFileClip('media/myvideo.mp4').resize((int(conf['resolution_width']/size), int(conf['resolution_height']/size))).margin(mar=10, color=(110, 5, 27)) # Size of animated Ticker
 
