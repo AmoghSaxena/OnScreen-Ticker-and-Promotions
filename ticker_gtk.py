@@ -63,7 +63,7 @@ def static_ticker_center():
     # set the pygame window name
     pygame.display.set_caption('StaticTicker')
 
-    font_size_for_center = int(conf['static_ticker_font_size'] / 2)
+    font_size_for_center = int(conf['static_ticker_font_size'] / 1.2)
     print(font_size_for_center)
 
     fonting = pygame.font.SysFont(conf['static_ticker_font'], font_size_for_center)
@@ -78,7 +78,7 @@ def static_ticker_center():
     while True:
         screen.fill(tuple(conf['static_ticker_bgcolor']))
         picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo_gtk.png')
-        screen.blit(texting, (tuple(textpos)[0],(int(conf['static_ticker_font_size'] * 2.5))))
+        screen.blit(texting, (tuple(textpos)[0],(int(conf['static_ticker_font_size'] * 3.5))))
         screen.blit(picture, (space_image, space_image))
 
         pygame.display.flip()
