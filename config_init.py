@@ -269,7 +269,7 @@ def resize_gtk():
     if CONFIG_DATA['position_static_ticker'] == "fullscreen":
         image = image.resize((CONFIG_DATA["resolution_width"], CONFIG_DATA["resolution_height"]), Image.ANTIALIAS)
     else:
-        image = image.resize((int(square * image_ratio), square), Image.Resampling.LANCZOS)
+        image = image.resize((int(square * image_ratio), square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo_gtk.png""")
     print("Done")
 
