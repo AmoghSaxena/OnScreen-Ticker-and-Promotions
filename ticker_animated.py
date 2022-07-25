@@ -32,9 +32,9 @@ elif conf['moving_ticker_localtion'] == "top-left":
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, 0)
 
 if conf['moving_ticker_center_size'] == "full":
-    clip = clip_video.resize((ratio * size, size))
+    clip = clip_video.resize((ratio * size, size)).without_audio()
 else:
-    clip = clip_video.resize((ratio * size, size)).margin(mar=10, color=(tuple(conf['moving_ticker_color'])))
+    clip = clip_video.resize((ratio * size, size)).margin(mar=10, color=(tuple(conf['moving_ticker_color']))).without_audio()
 
 
 
