@@ -24,7 +24,8 @@ def ticker_main():
     if conf['main_ticker_logo'] == True:
         if conf['main_ticker_logo_position'] == "left":
             x = 0  # image
-            y = conf['resolution_width'] / 96  # image
+            # y = conf['resolution_width'] / 96  # image
+            y = 0
         elif conf['main_ticker_logo_position'] == "right":
             x = conf['resolution_width'] - conf['image_size']  # image
             y = conf['resolution_width'] / 96  # image
