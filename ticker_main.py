@@ -28,7 +28,8 @@ def ticker_main():
             y = 0
         elif conf['main_ticker_logo_position'] == "right":
             x = conf['resolution_width'] - conf['image_size']  # image
-            y = conf['resolution_width'] / 96  # image
+            # y = conf['resolution_width'] / 96  # image
+            y = 0
 
     a = conf['resolution_width']  # for text
     b = conf['main_ticker_font_height']  # for text
