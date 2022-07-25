@@ -28,7 +28,8 @@ def resolution():
 def resize():
     # convert the logo to the resolution dependent
     print("Resizing the logo -> ", end=' ')
-    resize.square = int(float(resolution.width) / 17.45)
+    # resize.square = int(float(resolution.width) / 17.45)
+    resize.square = int(float(resolution.height) / 8)
     image = Image.open(f"""{BASE_DIR}/media/logo.png""")
     image = image.resize((resize.square, resize.square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo.png""")
