@@ -1,0 +1,40 @@
+{
+   "static_ticker_condition": false,
+   "main_ticker_condition": true,
+   "main_ticker_position": "up",
+   "main_ticker_message": "It's a Bird! It's a Plane! No, It's the Window Cleaner | It's a Bird! It's a Plane! No, It's the Window Cleaner | It's a Bird! It's a Plane! No, It's the Window Cleaner | It's a Bird! It's a Plane! No, It's the Window Cleaner | It's a Bird! It's a Plane! No, It's the Window Cleaner | ",
+   "main_ticker_logo": false,
+   "main_ticker_font": "MyriadProFont",
+   "main_ticker_font_size": "x-large",
+   "main_ticker_bgcolor": [
+      0,
+      108,
+      255
+   ],
+   "main_ticker_font_color": [
+      255,
+      255,
+      255
+   ],
+   "main_ticker_speed": "normal",
+   "main_ticker_motion": "right-left",
+   "optional_ticker_condition": true,
+   "optional_ticker_position": "up",
+   "optional_ticker_message": "The Window Cleaners are at work from 10am to 2pm to ensure that you have the best views for the rest of the day. ",
+   "optional_ticker_font": "MyriadProFont",
+   "optional_ticker_bgcolor": [
+      253,
+      253,
+      253
+   ],
+   "optional_ticker_font_color": [
+      0,
+      46,
+      94
+   ],
+   "optional_ticker_speed": "slow",
+   "optional_ticker_motion": "right-left",
+   "moving_ticker_condition": false,
+   "emergency_ticker_condition": false,
+   "time_interval": 500
+}
