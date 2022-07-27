@@ -73,7 +73,7 @@ except:
 try:
     if bool(CONFIG['emergency_ticker_condition']):
         if CONFIG['emergency_ticker_style'] == "static":
-            command = [f"wget -O {BASE_DIR}/media/myvideo.mp4 {CONFIG['emergency_ticker_logo_name']}"]
+            command = [f"wget -O {BASE_DIR}/media/logo_gtk.png {CONFIG['emergency_ticker_logo_name']}"]
             process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             output = process.stderr.read()
             exitstatus = process.wait()
