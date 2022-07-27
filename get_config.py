@@ -69,3 +69,27 @@ try:
 except:
     print("Animated Logo Not Found")
     pass
+
+try:
+    if bool(CONFIG['emergency_ticker_condition']):
+        if CONFIG['emergency_ticker_style'] == "static":
+            command = [f"wget -O {BASE_DIR}/media/myvideo.mp4 {CONFIG['emergency_ticker_logo_name']}"]
+            process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output = process.stderr.read()
+            exitstatus = process.wait()
+            if exitstatus == 0:
+                pass
+            else:
+                print(output.decode('utf-8'))
+        elif CONFIG['emergency_ticker_style'] == "dynamic":
+            command = [f"wget -O {BASE_DIR}/media/myvideo.mp4 {CONFIG['emergency_ticker_logo_name']}"]
+            process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output = process.stderr.read()
+            exitstatus = process.wait()
+            if exitstatus == 0:
+                pass
+            else:
+                print(output.decode('utf-8'))
+except:
+    print("Emergency Logo Not Found")
+    pass
