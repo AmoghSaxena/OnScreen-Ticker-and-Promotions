@@ -36,7 +36,6 @@ try:
 
 
 
-
     print(type(response.json()))
     print(json.dumps(response.json(),indent=3))
 
