@@ -115,7 +115,7 @@ if 'fullscreen' in conf['position_static_ticker']:
 #
 
 if 'top_fix_width' in conf['position_static_ticker']:
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (int(conf['resolution_height']) / 24))
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, 0)
     static_ticker()
 
 elif 'center' not in conf['position_static_ticker']:
