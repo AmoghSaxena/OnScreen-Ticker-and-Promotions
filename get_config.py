@@ -32,7 +32,7 @@ try:
         'ticker_id': (None, sys.argv[3]),
     }
 
-    response = requests.get(f'http://{sys.argv[1]}/ticker-config-api/', headers=headers, files=files)
+    response = requests.get(f'https://{sys.argv[1]}/ticker-config-api/', headers=headers, files=files)
 
 
 
