@@ -38,7 +38,7 @@ elif conf['moving_ticker_localtion'] == "top_fix_width":
 if conf['moving_ticker_center_size'] == "full":
     clip = clip_video.resize((ratio * size, size)).without_audio()
 elif conf['moving_ticker_center_size'] == "full_width":
-    clip = clip_video.resize((conf["resolution_width"], (conf['resolution_height']) / 8)).margin(mar=10, color=(tuple(conf['moving_ticker_color']))).without_audio()
+    clip = clip_video.resize((conf["resolution_width"], (conf['resolution_height']) / 8)).without_audio()
 else:
     clip = clip_video.resize((ratio * size, size)).margin(mar=10, color=(tuple(conf['moving_ticker_color']))).without_audio()
 
