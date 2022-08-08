@@ -19,6 +19,8 @@ def static_ticker():
             screen = pygame.display.set_mode((image_width, image_height))
         else:
             screen = pygame.display.set_mode((conf['static_ticker_font_length'], conf['static_ticker_font_height']))
+    elif 'top_fix_width' not in conf['position_static_ticker']:
+        screen = pygame.display.set_mode((conf['resolution_width'], conf['resolution_height']/24))
     else:
         screen = pygame.display.set_mode((conf['resolution_width'], conf['resolution_height']))
 
@@ -111,7 +113,12 @@ if 'fullscreen' in conf['position_static_ticker']:
     x_length = 0
     y_length = 0
 #
-if 'center' not in conf['position_static_ticker']:
+
+if 'top_fix_width' in conf['position_static_ticker']:
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % ((0), (int(conf['resolution_height']) / 24))
+    static_ticker()
+
+elif 'center' not in conf['position_static_ticker']:
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x_length, y_length)
     static_ticker()
 
