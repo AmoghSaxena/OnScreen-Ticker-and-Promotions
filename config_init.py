@@ -265,11 +265,12 @@ def resize_gtk():
     CONFIG_DATA['image_width'] = image.size[0]
     CONFIG_DATA['image_height'] = image.size[1]
     image_ratio = CONFIG_DATA['image_width'] / CONFIG_DATA['image_height']
+    CONFIG_DATA['static_image_ratio'] = image_ratio
     print('Ratio before conversion:', image_ratio)
     if CONFIG_DATA['position_static_ticker'] == "fullscreen":
         image = image.resize((CONFIG_DATA["resolution_width"], CONFIG_DATA["resolution_height"]), Image.ANTIALIAS)
-    elif CONFIG_DATA['position_static_ticker'] == "top_fix_width":
-        image = image.resize((int(CONFIG_DATA["resolution_width"]), int(CONFIG_DATA['resolution_height'] / 8)), Image.ANTIALIAS)
+    elif CONFIG_DATA['position_static_ticker'] == "top_fix_width" or CONFIG_DATA['position_static_ticker'] == "bottom_fix_width":
+        image = image.resize((int(CONFIG_DATA["resolution_width"]), int(CONFIG_DATA['resolution_width'] / image_ratio)), Image.ANTIALIAS)
     else:
         image = image.resize((int(square * image_ratio), square), Image.ANTIALIAS)
     image.save(fp=f"""{BASE_DIR}/media/res_logo_gtk.png""")
