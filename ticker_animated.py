@@ -33,7 +33,7 @@ elif conf['moving_ticker_localtion'] == "top-left":
 elif conf['moving_ticker_localtion'] == "top_fix_width":
     os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, 0)
 elif conf['moving_ticker_localtion'] == "bottom_fix_width":
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, conf['resolution_width'] / ratio)
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (0, (conf['resolution_width'] - (conf['resolution_width'] / ratio)))
 
 # CONFIG_DATA["resolution_width"], (CONFIG_DATA['resolution_height']) / 8
 
