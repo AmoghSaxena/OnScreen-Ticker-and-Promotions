@@ -38,7 +38,7 @@ def ticker_main():
     message = conf['main_ticker_message']
     if conf['main_ticker_logo'] == True:
         picture = pygame.image.load(conf['BASE_DIR'] + '/media/res_logo.jpg')
-    fonting = pygame.font.SysFont(conf['main_ticker_font'], main_ticker_font_size)
+    fonting = pygame.font.Font(f"{conf['BASE_DIR']}/fonts/NotoSans.ttf", main_ticker_font_size)
     texting = fonting.render(message, 1, tuple(conf['main_ticker_font_color']))
     screen = pygame.display.set_mode(windowSize)
     white = pygame.color.Color(tuple(conf['main_ticker_bgcolor']))
@@ -110,7 +110,7 @@ def ticker_optional():
     message = conf['optional_ticker_message']
 
     # picture = pygame.image.load(conf['BASE_DIR']+'/media/res_logo.jpg')
-    fonting = pygame.font.SysFont(conf['optional_ticker_font'], optional_ticker_font_size)
+    fonting = pygame.font.Font(f"{conf['BASE_DIR']}/fonts/NotoSans.ttf", optional_ticker_font_size)
     texting = fonting.render(message, 1, tuple(conf['optional_ticker_font_color']))
     screen = pygame.display.set_mode(windowSize)
     white = pygame.color.Color(tuple(conf['optional_ticker_bgcolor']))

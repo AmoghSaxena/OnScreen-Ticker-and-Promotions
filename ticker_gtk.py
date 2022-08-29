@@ -29,7 +29,7 @@ def static_ticker():
     # set the pygame window name
     pygame.display.set_caption('StaticTicker')
 
-    fonting = pygame.font.SysFont(conf['static_ticker_font'], conf['static_ticker_font_size'])
+    fonting = pygame.font.Font(f"{conf['BASE_DIR']}/fonts/NotoSans.ttf", conf['static_ticker_font_size'])
     texting = fonting.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_font_color']))
 
     # text = font.render("score: " + str(score), 1, (10, 10, 10))
@@ -68,7 +68,7 @@ def static_ticker_center():
     font_size_for_center = int(conf['static_ticker_font_size'] / 2.4)
     print(font_size_for_center)
 
-    fonting = pygame.font.SysFont(conf['static_ticker_font'], font_size_for_center)
+    fonting = pygame.font.Font(f"{conf['BASE_DIR']}/fonts/NotoSans.ttf", font_size_for_center)
     texting = fonting.render(conf['static_ticker_message'], 1, tuple(conf['static_ticker_font_color']))
 
     textpos = texting.get_rect(centerx=screen.get_width() / 2)
