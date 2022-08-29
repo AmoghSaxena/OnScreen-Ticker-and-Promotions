@@ -25,7 +25,7 @@ print(sys.argv)
 
 try:
     headers = {
-        'Authorization': f'Basic {sys.argv[2]}',
+        'tickerToken': 'K9c491y3kKfuodcuVU8pzxNX1raunlQLFKVqsxJENkE',
     }
 
     files = {
