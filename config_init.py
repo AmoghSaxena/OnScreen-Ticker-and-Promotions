@@ -101,15 +101,31 @@ def font_n_length(font_name):
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "MyriadProFont":
         if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 120
+            font_n_length.ticker_font_size = 115
+            font_n_length.main_ticker_hight = -21
         elif CONFIG_DATA['main_ticker_font_size'] == 'large':
             font_n_length.ticker_font_size = 100
+            font_n_length.main_ticker_hight = -7
         elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
             font_n_length.ticker_font_size = 70
+            font_n_length.main_ticker_hight = 20
         elif CONFIG_DATA['main_ticker_font_size'] == 'small':
             font_n_length.ticker_font_size = 40
+            font_n_length.main_ticker_hight = 10
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.2) * (-1)
-        font_n_length.main_ticker_hight = 10 #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
+         #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
+
+    # if font_name == "MyriadProFont":
+    #     if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
+    #         font_n_length.ticker_font_size = 120
+    #     elif CONFIG_DATA['main_ticker_font_size'] == 'large':
+    #         font_n_length.ticker_font_size = 100
+    #     elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
+    #         font_n_length.ticker_font_size = 70
+    #     elif CONFIG_DATA['main_ticker_font_size'] == 'small':
+    #         font_n_length.ticker_font_size = 40
+    #     font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.2) * (-1)
+    #     font_n_length.main_ticker_hight = 10 #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
 
     elif font_name == "Ubuntu":
         if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
