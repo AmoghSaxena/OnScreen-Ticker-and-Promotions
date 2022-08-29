@@ -25,7 +25,7 @@ print(sys.argv)
 
 try:
     headers = {
-        'tickerToken': 'K9c491y3kKfuodcuVU8pzxNX1raunlQLFKVqsxJENkE',
+        'tickerToken': sys.argv[2],
     }
 
     files = {
@@ -34,7 +34,9 @@ try:
 
     response = requests.get(f'https://{sys.argv[1]}/ticker-config-api/', headers=headers, files=files)
 
-
+    if response.status_code != 200:
+        print(response.text)
+        exit(1)
 
     print(type(response.json()))
     print(json.dumps(response.json(),indent=3))
