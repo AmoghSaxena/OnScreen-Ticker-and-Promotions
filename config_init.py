@@ -109,7 +109,7 @@ def font_n_length(font_name):
         elif CONFIG_DATA['main_ticker_font_size'] == 'small':
             font_n_length.ticker_font_size = 40
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.2) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 1))#(28 - 16) / 100) + 60))
+        font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size - 30))#(28 - 16) / 100) + 60))
 
     elif font_name == "Ubuntu":
         if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
