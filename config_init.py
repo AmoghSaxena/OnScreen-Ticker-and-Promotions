@@ -112,7 +112,7 @@ def font_n_length(font_name):
         elif CONFIG_DATA['main_ticker_font_size'] == 'small':
             font_n_length.ticker_font_size = 85
             font_n_length.main_ticker_hight = 5
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.0) * (-1)
          #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
 
     # if font_name == "MyriadProFont":
