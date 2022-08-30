@@ -102,16 +102,16 @@ def font_n_length(font_name):
     if font_name == "MyriadProFont":
         if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
             font_n_length.ticker_font_size = 115
-            font_n_length.main_ticker_hight = -18
+            font_n_length.main_ticker_hight = -15
         elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 100
-            font_n_length.main_ticker_hight = -7
+            font_n_length.ticker_font_size = 115
+            font_n_length.main_ticker_hight = -15
         elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 70
-            font_n_length.main_ticker_hight = 20
+            font_n_length.ticker_font_size = 100
+            font_n_length.main_ticker_hight = -5
         elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 40
-            font_n_length.main_ticker_hight = 10
+            font_n_length.ticker_font_size = 85
+            font_n_length.main_ticker_hight = 5
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.2) * (-1)
          #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
 
