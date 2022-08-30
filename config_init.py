@@ -206,7 +206,7 @@ if __name__ == '__main__':
         if CONFIG_DATA['optional_ticker_font'] in ['Ubuntu', 'NotoSansArabic', 'TimesNewRoman', 'MyriadProFont','ZCOOLQingKeHuangYou', 'NotoSansJP']:
             optinal_font_n_length(CONFIG_DATA['optional_ticker_font'])
         else:
-            optinal_font_n_length("FreeSans")
+            optinal_font_n_length("english")
         CONFIG_DATA['optional_ticker_font_size'] = optinal_font_n_length.ticker_font_size
         CONFIG_DATA['optional_ticker_font_length'] = optinal_font_n_length.left_length
         CONFIG_DATA['optional_ticker_font_height'] = optinal_font_n_length.optional_ticker_hight
