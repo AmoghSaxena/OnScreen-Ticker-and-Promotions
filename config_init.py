@@ -9,7 +9,7 @@ from PIL import ImageGrab
 args = sys.argv
 BASE_DIR = Path(__file__).resolve().parent
 
-with open("config.json", "r") as f:
+with open(f"{BASE_DIR}/config.json", "r") as f:
     conf = json.load(f)
 CONFIG_DATA = conf
 resize_condition = False
@@ -98,177 +98,30 @@ def ticker_speed(speed):
 
 def font_n_length(font_name):
     message = CONFIG_DATA['main_ticker_message']
+    if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
+        font_n_length.ticker_font_size = 115
+        font_n_length.main_ticker_hight = -18
+    elif CONFIG_DATA['main_ticker_font_size'] == 'large':
+        font_n_length.ticker_font_size = 115
+        font_n_length.main_ticker_hight = -18
+    elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
+        font_n_length.ticker_font_size = 100
+        font_n_length.main_ticker_hight = -5
+    elif CONFIG_DATA['main_ticker_font_size'] == 'small':
+        font_n_length.ticker_font_size = 85
+        font_n_length.main_ticker_hight = 5
     ############## LIST OF ENGLISH FONTS ################
-    if font_name == "MyriadProFont":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 115
-            font_n_length.main_ticker_hight = -15
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 115
-            font_n_length.main_ticker_hight = -15
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 100
-            font_n_length.main_ticker_hight = -5
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 85
-            font_n_length.main_ticker_hight = 5
+    if font_name == "english":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.0) * (-1)
-         #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
-
-    # if font_name == "MyriadProFont":
-    #     if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-    #         font_n_length.ticker_font_size = 120
-    #     elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-    #         font_n_length.ticker_font_size = 100
-    #     elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-    #         font_n_length.ticker_font_size = 70
-    #     elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-    #         font_n_length.ticker_font_size = 40
-    #     font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.2) * (-1)
-    #     font_n_length.main_ticker_hight = 10 #int(conf['resolution_height'] / ((font_n_length.ticker_font_size * 30))#(28 - 16) / 100) + 60))
-
-    elif font_name == "Ubuntu":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 100
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 130)
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 80
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 48)
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 60
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 32)
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 40
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 25)
-
-    elif font_name == "TimesNewRoman":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 100
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 80
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 60
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 40
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.3) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * (45 - 15) / 100) + 15))
-
-    ########## LIST OF ARABIC FONTS #####################
-    elif font_name == "NotoSansArabic":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 80
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.5) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 500)
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 60
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.5) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 200)
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 40
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.5) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 80)
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 20
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.5) * (-1)
-            font_n_length.main_ticker_hight = int(conf['resolution_height'] / 30)
-
-    ########## LIST OF FREE FONT ########################
-    elif font_name == "FreeSans":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 100
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 80
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 60
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 40
-
-        if CONFIG_DATA['main_ticker_font'] == "Russian":
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.9) * (-1)
-        else:
-            font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.3) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * (60 - 15) / 100) + 15))
-        CONFIG_DATA['main_ticker_font'] = "FreeSans"
-
-    ####### LIST OF CHINESE FONTS ######################
-    elif font_name == "ZCOOLQingKeHuangYou":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 100
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 80
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 60
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 40
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.2) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * (50 - 15) / 100) + 15))
-
-    ######## LIST OF JAPANESE FONTS ####################
-    elif font_name == "NotoSansJP":
-        if CONFIG_DATA['main_ticker_font_size'] == 'x-large':
-            font_n_length.ticker_font_size = 100
-        elif CONFIG_DATA['main_ticker_font_size'] == 'large':
-            font_n_length.ticker_font_size = 80
-        elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
-            font_n_length.ticker_font_size = 60
-        elif CONFIG_DATA['main_ticker_font_size'] == 'small':
-            font_n_length.ticker_font_size = 40
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.2) * (-1)
-        font_n_length.main_ticker_hight = int(conf['resolution_height'] / ((font_n_length.ticker_font_size * (300 - 15) / 100) + 15))
 
 
 def optinal_font_n_length(font_name):
     message = CONFIG_DATA['optional_ticker_message']
+    optinal_font_n_length.ticker_font_size = 40
+    optinal_font_n_length.optional_ticker_hight = -8
     ############## LIST OF ENGLISH FONTS ################
-    if font_name == "MyriadProFont":
-        optinal_font_n_length.ticker_font_size = 40
+    if font_name == "english":
         optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.8) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 120)
-
-    elif font_name == "Ubuntu":
-        optinal_font_n_length.ticker_font_size = 40
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 548)
-
-    elif font_name == "TimesNewRoman":
-        optinal_font_n_length.ticker_font_size = 40
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.3) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 385)
-    #####################################################
-
-    ############ LIST OF RUSSIAN FONTS #################
-    if font_name == "NotoSansArabic":
-        optinal_font_n_length.ticker_font_size = 20
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.5) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 1000)
-    ####################################################
-
-    ########### LIST OF FREE FONTS ###################
-    if font_name == "FreeSans":
-        optinal_font_n_length.ticker_font_size = 40
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.9) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 500)
-    ####################################################
-
-    ########### LIST OF CHINESE FONTS ###################
-    if font_name == "ZCOOLQingKeHuangYou":
-        optinal_font_n_length.ticker_font_size = 40
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.2) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 500)
-    ####################################################
-
-    ########### LIST OF JAPANESE FONTS ###################
-    if font_name == "NotoSansJP":
-        optinal_font_n_length.ticker_font_size = 30
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.2) * (-1)
-        optinal_font_n_length.optional_ticker_hight = int(conf['resolution_height'] / 800)
-    ####################################################
-
-
 
 
 
