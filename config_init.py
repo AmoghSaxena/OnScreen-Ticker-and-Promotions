@@ -112,7 +112,7 @@ def font_n_length(font_name):
         font_n_length.main_ticker_hight = 5
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "english":
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2) * (-1)
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
 
 
 def optinal_font_n_length(font_name):
