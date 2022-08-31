@@ -112,7 +112,7 @@ def font_n_length(font_name):
     if font_name == "english":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
     elif font_name == "hindi":
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.4) * (-1)
     elif font_name == "chinese":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
     elif font_name == "japnese":
