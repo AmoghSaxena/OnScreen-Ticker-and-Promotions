@@ -80,7 +80,6 @@ def ticker_animated_center():
     CONFIG_DATA['ticker_animated_center_width'] = int(conf['resolution_width'] / size)
     CONFIG_DATA['ticker_animated_center_height'] = int(conf['resolution_height'] / size)
 
-
 def ticker_speed(speed):
     if speed == "fast":
         ticker_speed.block_skip = 4
@@ -94,7 +93,6 @@ def ticker_speed(speed):
     elif speed == "very-slow":
         ticker_speed.block_skip = 2
         ticker_speed.time_sleep = 0.012
-
 
 def font_n_length(font_name):
     message = CONFIG_DATA['main_ticker_message']
