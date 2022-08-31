@@ -120,7 +120,7 @@ def font_n_length(font_name):
     elif font_name == "russian":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.9) * (-1)
     elif font_name == "arabic":
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.85) * (-1)
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.82) * (-1)
 
 
 def optinal_font_n_length(font_name):
