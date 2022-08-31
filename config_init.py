@@ -113,6 +113,16 @@ def font_n_length(font_name):
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "english":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "hindi":
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "chinese":
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "japnese":
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "russian":
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "arabic":
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
 
 
 def optinal_font_n_length(font_name):
@@ -121,7 +131,17 @@ def optinal_font_n_length(font_name):
     optinal_font_n_length.optional_ticker_hight = -8
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "english":
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.8) * (-1)
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "hindi":
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "chinese":
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "japnese":
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "russian":
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+    elif font_name == "arabic":
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
 
 
 
@@ -184,7 +204,7 @@ if __name__ == '__main__':
         ticker_speed(CONFIG_DATA['main_ticker_speed'])
         CONFIG_DATA['main_block_skip'] = ticker_speed.block_skip
         CONFIG_DATA['main_time_sleep'] = ticker_speed.time_sleep
-        if CONFIG_DATA['main_ticker_font'] in ['Ubuntu', 'NotoSansArabic', 'TimesNewRoman', 'MyriadProFont', 'ZCOOLQingKeHuangYou', 'NotoSansJP']:
+        if CONFIG_DATA['main_ticker_font'] in ['hindi', 'chinese', 'japnese', 'russian', 'arabic']:
             font_n_length(CONFIG_DATA['main_ticker_font'])
         else:
             font_n_length("english")
@@ -203,7 +223,7 @@ if __name__ == '__main__':
         CONFIG_DATA['optional_block_skip'] = ticker_speed.block_skip
         CONFIG_DATA['optional_time_sleep'] = ticker_speed.time_sleep
 
-        if CONFIG_DATA['optional_ticker_font'] in ['Ubuntu', 'NotoSansArabic', 'TimesNewRoman', 'MyriadProFont','ZCOOLQingKeHuangYou', 'NotoSansJP']:
+        if CONFIG_DATA['optional_ticker_font'] in ['hindi', 'chinese', 'japnese', 'russian', 'arabic']:
             optinal_font_n_length(CONFIG_DATA['optional_ticker_font'])
         else:
             optinal_font_n_length("english")
