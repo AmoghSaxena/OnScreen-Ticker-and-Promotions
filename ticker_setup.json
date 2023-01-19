@@ -16,5 +16,8 @@
    "ticker_type": "Media Ticker",
    "moving_ticker_logo_name": "https://dvs-dev.digivalet.com/media/video_29_4.mp4",
    "ticker_id": 29,
-   "auth_token": "K9c491y3kKfuodcuVU8pzxNX1raunlQLFKVqsxJENkE"
+   "auth_token": "K9c491y3kKfuodcuVU8pzxNX1raunlQLFKVqsxJENkE",
+   "BASE_DIR": "/home/guest/.tickerv2",
+   "resolution_width": 1920,
+   "resolution_height": 1080
 }

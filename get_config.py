@@ -5,22 +5,9 @@ import json
 from pathlib import Path
 import subprocess
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = "/home/guest/.tickerv2"
 print(f"POSITION : {BASE_DIR}")
 print(sys.argv)
-# try:
-#     command = [
-#         f"curl -s --location --request GET 'https://{sys.argv[1]}/ticker-config-api/' --header 'Authorization: Basic {sys.argv[2]}' --form 'ticker_id={sys.argv[3]}' | jq '.' > {BASE_DIR}/config.json"]
-#     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-#     output = process.stderr.read()
-#     exitstatus = process.wait()
-#     if exitstatus == 0:
-#         pass
-#     else:
-#         print(output.decode('utf-8'))
-# except Exception as e:
-#     print(e)
-#     exit()
 
 
 try:
@@ -32,7 +19,9 @@ try:
         'ticker_id': (None, sys.argv[3]),
     }
 
-    response = requests.get(f'https://{sys.argv[1]}/ticker-config-api/', headers=headers, files=files)
+    response = requests.get(f'https://{sys.argv[1]}/ticker-config-api', headers=headers, files=files)
+    print(type(response.status_code))
+    print(response.status_code)
 
     if response.status_code != 200:
         print(response.text)
@@ -100,7 +89,7 @@ except:
     pass
 
 try:
-    if bool(CONFIG['emergency_ticker_condition']):
+    if CONFIG['emergency_ticker_condition']:
         if CONFIG['emergency_ticker_style'] == "static":
             command = [f"wget -O {BASE_DIR}/media/logo_gtk.png {CONFIG['emergency_ticker_logo_name']}"]
             process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

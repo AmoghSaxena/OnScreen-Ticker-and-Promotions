@@ -5,9 +5,9 @@ A Linux Program for On-Screen Advertisements and promotions like shown in News C
 
 ### OS related Dependency ###
 1. Linux OS (recommended Ubuntu)
-2. Desktop Environment Like `Ubuntu(Gnome/Mate/Lite/etc) - with hidden decorators`, `OpenBOX - with hidden decorators`
+2. Desktop Environment Like `Ubuntu(Gnome/Mate/Lite/etc) - with hidden decorators and alwaysOnTop support`, `Fluxbox - with hidden decorators and alwaysOnTop support`
 > If you want to disable the decorator in Gnome then check my Stack Overflow solution over here : [StackOverflow Link](https://stackoverflow.com/a/71908794/8813647)
-3. Supported Python Version 3.6 [![Supported Python Version 3.6+](https://img.shields.io/badge/Python-v3.6+-blue.svg?style=flat-square&logo=python)](https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions)
+3. Supported Python Version 3.6 [![Supported Python Version 3.6+](https://img.shields.io/badge/Python-v3.6+-blue.svg?style=flat-square&logo=python)](https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions) BUT Recommended Python Version 3.8 [![Supported Python Version 3.6+](https://img.shields.io/badge/Python-v3.8+-blue.svg?style=flat-square&logo=python)](https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions)
 
 ### Tools for Proper working of Ticker ###
 * virtualenv 
@@ -26,12 +26,12 @@ sudo apt install -y virtualenv pkg-config libcairo2-dev python3-dev gcc libgirep
 ```
 For Other distribution other than Ubuntu can install dependencies with similar commands found. You can refer Internet for same.
 
-## Installation ##
+## Installation for stand-alone without services ##
 
 ### Procedure to Install this code ###
 #### 1. Clone the Repo ####
 ```shell
-$ git clone https://github.com/AmoghSaxena/OnScreen-Ticker-and-Promotions.git ticker
+$ git clone https://dvgit.digivalet.com/scm/dvcsof/tickerv2.git
 ```
 
 #### 2. Change the working directory to cloned directory
@@ -143,3 +143,38 @@ $ ./start_ticker
 > $ chmod +x ./stop_ticker_force
 > $ ./stop_ticker_force
 > ```
+
+
+### Changlogs
+```
+Changes between 1.1 and 1.2:
+--------------------------------
+
+Core:
+ * Added Closing API Support
+ * Fixed Font length issue for English Language.
+ * Fixed Priority and API get-config Issue.
+ * Fixed & Implemented DND support for ticker.
+
+
+Changes between 1.0 and 1.1:
+--------------------------------
+
+Platform support changes:
+ * Python 3.8:
+     - Python 3.8 Now automatically installs with the Artifact
+     - No need to install pip modules in virtual environment
+
+Core:
+ * Added Free Font style
+     - Single font will be used for multiple languages
+ * Optimized the code for the memory usage and thread-counts
+ * Added Bash script which will now start and stop ticker using Ticker Services.
+
+
+Changes for 1.0:
+--------------------------------
+
+Core:
+ * Added Ticker and Its Enhancements including Python 3.6 Support
+```

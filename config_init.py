@@ -7,8 +7,8 @@ from pathlib import Path
 from PIL import ImageGrab
 
 args = sys.argv
-BASE_DIR = Path(__file__).resolve().parent
-
+#BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = "/home/guest/.tickerv2"
 with open(f"{BASE_DIR}/config.json", "r") as f:
     conf = json.load(f)
 CONFIG_DATA = conf
@@ -110,7 +110,7 @@ def font_n_length(font_name):
         font_n_length.main_ticker_hight = 5
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "english":
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.1) * (-1)
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.6) * (-1)
     elif font_name == "hindi":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.4) * (-1)
     elif font_name == "chinese":
@@ -129,7 +129,7 @@ def optinal_font_n_length(font_name):
     optinal_font_n_length.optional_ticker_hight = -8
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "english":
-        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.1) * (-1)
+        optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 1.6) * (-1)
     elif font_name == "hindi":
         optinal_font_n_length.left_length = int(float(len(message) * optinal_font_n_length.ticker_font_size) / 2.4) * (-1)
     elif font_name == "chinese":
@@ -181,7 +181,7 @@ def png_jpg():
 
 def dump():
     print("Dumping Data into Json File -> ", end=' ')
-    with open("ticker_setup.json", "w") as outfile:
+    with open(f"{BASE_DIR}/ticker_setup.json", "w") as outfile:
         outfile.write(json.dumps(CONFIG_DATA, indent=3))
     print("Done")
 
@@ -232,6 +232,12 @@ if __name__ == '__main__':
     if CONFIG_DATA['moving_ticker_condition'] == True:
         if CONFIG_DATA['moving_ticker_localtion'] == 'center':
             ticker_animated_center()
+
+#        if CONFIG_DATA['moving_ticker_localtion'] == "bottom_fix_width":
+#            CONFIG_DATA['moving_ticker_center_size'] = "full_width"
+#
+#        if CONFIG_DATA['moving_ticker_localtion'] == "top_fix_width":
+#            CONFIG_DATA['moving_ticker_center_size'] = "full_width"
 
 
 

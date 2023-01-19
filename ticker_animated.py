@@ -12,6 +12,12 @@ value = clip_video.size
 print(value)
 ratio = value[0] / value[1]
 
+if conf['moving_ticker_localtion'] == "bottom_fix_width":
+    conf['moving_ticker_center_size'] = "full_width"
+
+if conf['moving_ticker_localtion'] == "top_fix_width":
+    conf['moving_ticker_center_size'] = "full_width"
+
 if conf['moving_ticker_center_size'] == "small":
     size = int(conf['resolution_height']/3)
 elif conf['moving_ticker_center_size'] == "normal":
@@ -40,7 +46,7 @@ elif conf['moving_ticker_localtion'] == "bottom_fix_width":
 if conf['moving_ticker_center_size'] == "full":
     clip = clip_video.resize((ratio * size, size)).without_audio()
 elif conf['moving_ticker_center_size'] == "full_width":
-    clip = clip_video.resize((conf["resolution_width"], (conf['resolution_width']) / ratio)).without_audio()
+    clip = clip_video.resize((conf["resolution_width"], (conf['resolution_width']) / ratio)).without_audio().set_fps(120)
 else:
     clip = clip_video.resize((ratio * size, size)).margin(mar=10, color=(tuple(conf['moving_ticker_color']))).without_audio()
 
@@ -48,5 +54,6 @@ else:
 
 while True:
     clip.preview()
+#    clip.ipython_display()
 pygame.quit()
 
