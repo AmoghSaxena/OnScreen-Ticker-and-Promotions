@@ -102,7 +102,7 @@ def font_n_length(font_name):
     elif CONFIG_DATA['main_ticker_font_size'] == 'large':
         font_n_length.ticker_font_size = 115
         font_n_length.main_ticker_hight = -18
-    elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
+    elif CONFIG_DATA['main_ticker_font_size'] == 'normal':
         font_n_length.ticker_font_size = 100
         font_n_length.main_ticker_hight = -5
     elif CONFIG_DATA['main_ticker_font_size'] == 'small':
