@@ -102,7 +102,7 @@ def font_n_length(font_name):
     elif CONFIG_DATA['main_ticker_font_size'] == 'large':
         font_n_length.ticker_font_size = 115
         font_n_length.main_ticker_hight = -18
-    elif CONFIG_DATA['main_ticker_font_size'] == 'mid':
+    elif CONFIG_DATA['main_ticker_font_size'] == 'normal':
         font_n_length.ticker_font_size = 100
         font_n_length.main_ticker_hight = -5
     elif CONFIG_DATA['main_ticker_font_size'] == 'small':
@@ -110,7 +110,7 @@ def font_n_length(font_name):
         font_n_length.main_ticker_hight = 5
     ############## LIST OF ENGLISH FONTS ################
     if font_name == "english":
-        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.6) * (-1)
+        font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 1.98) * (-1)
     elif font_name == "hindi":
         font_n_length.left_length = int(float(len(message) * font_n_length.ticker_font_size) / 2.4) * (-1)
     elif font_name == "chinese":

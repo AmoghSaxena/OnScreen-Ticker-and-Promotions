@@ -35,7 +35,7 @@ try:
     print("Done")
 except Exception as e:
     print(e)
-    exit()
+    exit(1)
 
 
 

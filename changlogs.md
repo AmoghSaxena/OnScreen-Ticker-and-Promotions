@@ -1,3 +1,14 @@
+```
+Changes between 1.2 and 1.3:
+--------------------------------
+
+Core:
+ * Fixed Font length issue for English Language.
+ * Fixed Free Font issue for languages
+ * Changed `mid` to `normal` in font-size. Same as dashboard to fix previous ticker runnning issue.
+ * Fixed API Issue for launching previous ticker
+
+
 Changes between 1.1 and 1.2:
 --------------------------------
 
@@ -28,3 +39,4 @@ Changes for 1.0:
 
 Core:
  * Added Ticker and Its Enhancements including Python 3.6 Support
+```
