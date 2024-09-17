@@ -1,3 +1,11 @@
+# **ARCHIVAL NOTICE**
+
+**This repository is now being archived as a new version is in progress. The new version of this repository is available at [https://github.com/AmoghSaxena/ticker-v2](https://github.com/AmoghSaxena/ticker-v2)**
+
+Please note that this repository will no longer be actively maintained or updated. All future development and updates will be made to the new version. We recommend using the new version for any new projects or contributions.
+
+---
+
 # OnScreen-Ticker-and-Promotions
 A Linux Program for On-Screen Advertisements and promotions like shown in News Channels.
 
